@@ -28,8 +28,10 @@ Route::prefix('auth')->group(function () {
     Route::put('profile', [ProfileController::class, 'update']);
 });
 
-Route::apiResource('users', UserController::class);
-Route::apiResource('admins', AdminController::class);
-Route::apiResource('companies', CompanyController::class);
-Route::apiResource('contacts', ContactController::class)->only('index');
-Route::match(['PUT', 'PATCH'], 'admins/{admin}/roles', [AdminRoleController::class, 'update']);
+Route::middleware('auth:admin,user')->group(function () {
+    Route::apiResource('users', UserController::class);
+    Route::apiResource('admins', AdminController::class);
+    Route::apiResource('companies', CompanyController::class);
+    Route::apiResource('contacts', ContactController::class)->only('index', 'show');
+    Route::match(['PUT', 'PATCH'], 'admins/{admin}/roles', [AdminRoleController::class, 'update']);
+});

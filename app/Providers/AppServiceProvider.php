@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Domain\Auth\Models\User;
+use App\Domain\Companies\Models\Company;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,7 +27,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Relation::morphMap([
-            'user' => User::class
+            'user' => User::class,
+            'company' => Company::class
         ]);
     }
 }

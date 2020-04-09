@@ -1,6 +1,4 @@
 <?php
-/** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
-/** @noinspection PhpFullyQualifiedNameUsageInspection */
 
 namespace App\Exceptions;
 
@@ -55,7 +53,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($request->is('api/*') && !config('app.debug')) {
+        if ($request->is('api/*')) {
             $this->convertDefaultException($exception);
             return $this->renderResponse($exception);
         }
