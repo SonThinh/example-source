@@ -4,7 +4,7 @@
 namespace App\Domain\Companies\Models;
 
 use App\Domain\Companies\Builders\CompanyBuilder;
-use App\Domain\Shared\Traits\HasContacts;
+use App\Domain\Shared\Traits\HasContact;
 use App\Domain\Support\Traits\HasUuid;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +13,7 @@ class Company extends Model
 {
     use OverridesBuilder;
     use HasUuid;
-    use HasContacts;
+    use HasContact;
 
     public function provideCustomBuilder()
     {

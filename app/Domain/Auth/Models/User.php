@@ -3,7 +3,7 @@
 namespace App\Domain\Auth\Models;
 
 use App\Domain\Auth\Builders\UserBuilder;
-use App\Domain\Shared\Traits\HasContacts;
+use App\Domain\Shared\Traits\HasContact;
 use App\Domain\Support\Traits\HasUuid;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -16,7 +16,7 @@ class User extends Authenticatable implements JWTSubject
     use Notifiable;
     use HasUuid;
     use HasRoles;
-    use HasContacts;
+    use HasContact;
     use OverridesBuilder;
 
     public function provideCustomBuilder()
