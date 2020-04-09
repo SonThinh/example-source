@@ -1,19 +1,23 @@
 <?php
 
+namespace App\Domain\Posts\Models;
 
-namespace App\Domain\Shared\Models;
 
-use App\Domain\Shared\Builders\ContactBuilder;
+use App\Domain\Posts\Builders\PostBuilder;
+use App\Domain\Support\Traits\HasUuid;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Contact extends Model
+class Post extends Model
 {
+    use SoftDeletes;
+    use HasUuid;
     use OverridesBuilder;
 
     public function provideCustomBuilder()
     {
-        return ContactBuilder::class;
+        return PostBuilder::class;
     }
 
     /**
@@ -21,10 +25,7 @@ class Contact extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'postcode', 'city', 'free_dial', 'tel', 'fax', 'email', 'website', 'address',
-        'contactable_id', 'contactable_type'
-    ];
+    protected $fillable = ['post_type', 'title', 'content', 'status', 'display_order', 'publish_from', 'publish_to'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -45,14 +46,16 @@ class Contact extends Model
     ];
 
     // ======================================================================
+    // Accessors & Mutators
+    // ======================================================================
+
+
+    // ======================================================================
     // Relationships
     // ======================================================================
 
-    /**
-     * Get the owning contactable model.
-     */
-    public function contactable()
+    public function deliveryTarget()
     {
-        return $this->morphTo();
+        return $this->hasOne(DeliveryTarget::class, 'post_id');
     }
 }

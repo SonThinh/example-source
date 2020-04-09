@@ -1,30 +1,25 @@
 <?php
 
+namespace App\Domain\Posts\Models;
 
-namespace App\Domain\Shared\Models;
-
-use App\Domain\Shared\Builders\ContactBuilder;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Domain\Shared\Builders\PostBuilder;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class DeliveryTarget extends Model
 {
-    use OverridesBuilder;
-
-    public function provideCustomBuilder()
-    {
-        return ContactBuilder::class;
-    }
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'postcode', 'city', 'free_dial', 'tel', 'fax', 'email', 'website', 'address',
-        'contactable_id', 'contactable_type'
-    ];
+    protected $fillable = ['post_id', 'prefecture_id', 'company_id'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -45,14 +40,16 @@ class Contact extends Model
     ];
 
     // ======================================================================
+    // Accessors & Mutators
+    // ======================================================================
+
+
+    // ======================================================================
     // Relationships
     // ======================================================================
 
-    /**
-     * Get the owning contactable model.
-     */
-    public function contactable()
+    public function post()
     {
-        return $this->morphTo();
+        return $this->belongsTo(Post::class, 'post_id');
     }
 }

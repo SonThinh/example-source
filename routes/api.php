@@ -6,8 +6,9 @@ use App\Domain\Auth\Controllers\AuthController;
 use App\Domain\Auth\Controllers\ProfileController;
 use App\Domain\Auth\Controllers\UserController;
 use App\Domain\Companies\Controllers\CompanyController;
+use App\Domain\Posts\Controllers\PostController;
 use App\Domain\Shared\Controllers\ContactController;
-use Illuminate\Support\Facades\Route;
+use App\Domain\Shared\Controllers\PrefectureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,11 @@ Route::prefix('auth')->group(function () {
 });
 
 Route::middleware('auth:admin,user')->group(function () {
+    Route::apiResource('prefectures', PrefectureController::class)->only('index');
     Route::apiResource('users', UserController::class);
     Route::apiResource('admins', AdminController::class);
     Route::apiResource('companies', CompanyController::class);
     Route::apiResource('contacts', ContactController::class)->only('index', 'show');
+    Route::apiResource('posts', PostController::class);
     Route::match(['PUT', 'PATCH'], 'admins/{admin}/roles', [AdminRoleController::class, 'update']);
 });

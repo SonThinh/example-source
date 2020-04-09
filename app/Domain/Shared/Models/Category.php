@@ -3,17 +3,27 @@
 
 namespace App\Domain\Shared\Models;
 
-use App\Domain\Shared\Builders\ContactBuilder;
+use App\Domain\Shared\Builders\CategoryBuilder;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
-class Contact extends Model
+class Category extends Model
 {
     use OverridesBuilder;
 
     public function provideCustomBuilder()
     {
-        return ContactBuilder::class;
+        return CategoryBuilder::class;
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function (Model $model) {
+            $model->category_code = (string)Str::random(8) . '_' . time();
+        });
     }
 
     /**
@@ -21,10 +31,7 @@ class Contact extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'postcode', 'city', 'free_dial', 'tel', 'fax', 'email', 'website', 'address',
-        'contactable_id', 'contactable_type'
-    ];
+    protected $fillable = ['category_code', 'category_type', 'display_name', 'display_order'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -32,7 +39,6 @@ class Contact extends Model
      * @var array
      */
     protected $hidden = [
-        //
     ];
 
     /**
@@ -47,12 +53,4 @@ class Contact extends Model
     // ======================================================================
     // Relationships
     // ======================================================================
-
-    /**
-     * Get the owning contactable model.
-     */
-    public function contactable()
-    {
-        return $this->morphTo();
-    }
 }
