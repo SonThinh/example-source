@@ -3,6 +3,8 @@
 
 namespace App\Domain\Companies\Controllers;
 
+use App\Domain\Companies\Action\CreateCompanyAction;
+use App\Domain\Companies\Action\UpdateConpanyAction;
 use App\Domain\Companies\Filters\CompanyFilter;
 use App\Domain\Companies\Models\Company;
 use App\Domain\Companies\Requests\CreateCompanyRequest;
@@ -41,11 +43,13 @@ class CompanyController extends ApiController
      * Store a newly created resource in storage.
      *
      * @param CreateCompanyRequest $request
+     * @param CreateCompanyAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     * @throws \Throwable
      */
-    public function store(CreateCompanyRequest $request)
+    public function store(CreateCompanyRequest $request, CreateCompanyAction $action)
     {
-        $company = Company::create($request->validated());
+        $company = $action->execute($request->validated());
         return $this->httpCreated($company, CompanyTransformer::class);
     }
 
@@ -54,11 +58,12 @@ class CompanyController extends ApiController
      *
      * @param UpdateCompanyRequest $request
      * @param Company $company
+     * @param UpdateConpanyAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function update(UpdateCompanyRequest $request, Company $company)
+    public function update(UpdateCompanyRequest $request, Company $company, UpdateConpanyAction $action)
     {
-        $company->update($request->validated());
+        $action->execute($company, $request->validated());
         return $this->httpNoContent();
     }
 
