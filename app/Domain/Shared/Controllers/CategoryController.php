@@ -1,17 +1,15 @@
 <?php
-/** @noinspection PhpFullyQualifiedNameUsageInspection */
 
 
-namespace App\Domain\Auth\Controllers;
+namespace App\Domain\Shared\Controllers;
 
-use App\Domain\Auth\Models\Role;
-use App\Domain\Auth\Requests\CreateRoleRequest;
-use App\Domain\Auth\Requests\UpdateRoleRequest;
-use App\Domain\Auth\Transformers\RoleTransformer;
+use App\Domain\Shared\Models\Category;
+use App\Domain\Shared\Requests\CreateCategoryRequest;
+use App\Domain\Shared\Requests\UpdateCategoryRequest;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 
-class RoleController extends ApiController
+class CategoryController extends ApiController
 {
     /**
      * Display a listing of the resource.
@@ -21,43 +19,43 @@ class RoleController extends ApiController
      */
     public function index(Request $request)
     {
-        return $this->httpOK(Role::all(), RoleTransformer::class);
+        return $this->httpOK(Category::all(), CategoryTransformer::class);
     }
 
     /**
      * Display the specified resource.
      *
      * @param Request $request
-     * @param Role $role
+     * @param Category $category
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function show(Request $request, Role $role)
+    public function show(Request $request, Category $category)
     {
-        return $this->httpOK($role, RoleTransformer::class);
+        return $this->httpOK($category, CategoryTransformer::class);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param CreateRoleRequest $request
+     * @param CreateCategoryRequest $request
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function store(CreateRoleRequest $request)
+    public function store(CreateCategoryRequest $request)
     {
-        $admin = Role::create($request->validated());
-        return $this->httpCreated($admin, RoleTransformer::class);
+        $admin = Category::create($request->validated());
+        return $this->httpCreated($admin, CategoryTransformer::class);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param UpdateRoleRequest $request
-     * @param Role $role
+     * @param UpdateCategoryRequest $request
+     * @param Category $category
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function update(UpdateRoleRequest $request, Role $role)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $role->update($request->validated());
+        $category->update($request->validated());
         return $this->httpNoContent();
     }
 
@@ -65,13 +63,13 @@ class RoleController extends ApiController
      * Remove the specified resource from storage.
      *
      * @param Request $request
-     * @param Role $role
+     * @param Category $category
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      * @throws \Exception
      */
-    public function destroy(Request $request, Role $role)
+    public function destroy(Request $request, Category $category)
     {
-        $role->delete();
+        $category->delete();
         return $this->httpNoContent();
     }
 }
