@@ -26,7 +26,15 @@ class Company extends Model
      * @var array
      */
     protected $fillable = [
-        'postcode', 'city', 'free_dial', 'tel', 'fax', 'email', 'website', 'address',
+        //'prefecture_id',
+        'code',
+        'name',
+        'created_by',
+        'updated_by',
+        'deleted_by',
+        'deleted_at',
+        'updated_at',
+        'created_at'
     ];
 
     /**
