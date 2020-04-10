@@ -18,9 +18,9 @@ class CreateUserAction
         $user->fill(Arr::except($data, 'contact'));
         $user->save();
 
-        $contact = new Contact();
-        $contact->fill(Arr::only($data, 'contact'));
-        $user->contact()->save($contact);
+        if ($contactData = Arr::get($data, 'contact')) {
+            $user->contact()->create(Arr::get($data, 'contact'));
+        }
 
         return $user;
     }

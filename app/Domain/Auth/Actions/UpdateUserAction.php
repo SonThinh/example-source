@@ -5,6 +5,7 @@ namespace App\Domain\Auth\Actions;
 
 
 use App\Domain\Auth\Models\User;
+use Illuminate\Support\Arr;
 
 class UpdateUserAction
 {
@@ -18,9 +19,9 @@ class UpdateUserAction
         $user->fill(Arr::except($data, 'contact'));
         $user->save();
 
-        $contact = $user->contact;
-        $contact->fill(Arr::get($data, 'contact'));
-        $contact->save();
-        return $contact;
+        if ($contactData = Arr::get($data, 'contact')) {
+            $user->contact()->updateOrCreate(Arr::get($data, 'contact'));
+        }
+        return $user;
     }
 }

@@ -19,7 +19,7 @@ class UpdateUserRequest extends ApiRequest
             'last_name' => 'sometimes|string',
             'gender' => 'sometimes|string',
             'birthday' => 'sometimes|date|date_format:Y-m-d',
-            'email' => 'sometimes|email|unique:users,email',
+            'email' => 'sometimes|email|unique:users,email,'.$this->route('user')->id,
             'password' => 'sometimes|confirmed',
             'contact'               => 'filled|array',
             'contact.postcode'      => 'filled|string',
