@@ -6,6 +6,7 @@ namespace App\Domain\Shared\Controllers;
 use App\Domain\Shared\Models\Category;
 use App\Domain\Shared\Requests\CreateCategoryRequest;
 use App\Domain\Shared\Requests\UpdateCategoryRequest;
+use App\Domain\Shared\Transformers\CategoryTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

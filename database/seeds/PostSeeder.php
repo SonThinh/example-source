@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\DB;
 
 class PostSeeder extends Seeder
 {
-    protected $total = 1500000;
-    protected $chunk = 100;
+    protected $total = 100;
+    protected $chunk = 10;
 
     /**
      * Run the database seeds.

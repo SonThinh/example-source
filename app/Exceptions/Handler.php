@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Flugg\Responder\Exceptions\ConvertsExceptions;
+use Flugg\Responder\Exceptions\Http\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -53,7 +54,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if ($request->is('api/*')) {
+        if ($request->is('api/*') && $exception instanceof HttpException) {
             $this->convertDefaultException($exception);
             return $this->renderResponse($exception);
         }
