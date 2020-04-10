@@ -38,6 +38,6 @@ class UpdateUserRequest extends ApiRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 }
