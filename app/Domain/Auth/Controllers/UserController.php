@@ -4,6 +4,8 @@
 
 namespace App\Domain\Auth\Controllers;
 
+use App\Domain\Auth\Actions\CreateUserAction;
+use App\Domain\Auth\Actions\UpdateUserAction;
 use App\Domain\Auth\Filters\UserFilter;
 use App\Domain\Auth\Models\User;
 use App\Domain\Auth\Requests\CreateUserRequest;
@@ -42,12 +44,14 @@ class UserController extends ApiController
      * Store a newly created resource in storage.
      *
      * @param CreateUserRequest $request
+     * @param CreateUserAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     * @throws \Throwable
      */
-    public function store(CreateUserRequest $request)
+    public function store(CreateUserRequest $request, CreateUserAction $action)
     {
-        $admin = User::create($request->validated());
-        return $this->httpCreated($admin, UserTransformer::class);
+        $user = $action->execute($request->validated());
+        return $this->httpCreated($user, UserTransformer::class);
     }
 
     /**
@@ -55,11 +59,12 @@ class UserController extends ApiController
      *
      * @param UpdateUserRequest $request
      * @param User $user
+     * @param UpdateUserAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(UpdateUserRequest $request, User $user, UpdateUserAction $action)
     {
-        $user->update($request->validated());
+        $action->execute($user, $request->validated());
         return $this->httpNoContent();
     }
 

@@ -9,7 +9,7 @@ use App\Domain\Companies\Models\Company;
 class UpdateConpanyAction
 {
     /**
-     * @param Company $post
+     * @param Company $company
      * @param array $data
      * @return Company|bool|\Illuminate\Database\Eloquent\Model
      */
