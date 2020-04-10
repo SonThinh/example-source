@@ -17,18 +17,18 @@ class PostSeeder extends Seeder
     {
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('posts')->truncate();
-        $start = now();
+        $startSeed = now();
         foreach ($this->generator() as $index => $value) {
-            $start = microtime(true);
+            $startInsert = microtime(true);
             DB::table('posts')->insert($value);
-            $time = microtime(true) - $start;
+            $timeInsert = microtime(true) - $startInsert;
             $total = count($value);
             $offset = $this->total / $this->chunk;
-            $this->command->info("({$index}/{$offset}) Insert {$total} records take {$time}");
+            $this->command->info("({$index}/{$offset}) Insert {$total} records take {$timeInsert}");
         }
-        $end = now()->diffInMinutes($start);
+        $seedTime = now()->diffInMinutes($startSeed);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        $this->command->info("Total times spend {$end} second");
+        $this->command->info("Total times spend {$seedTime} second");
     }
 
     private function generator()

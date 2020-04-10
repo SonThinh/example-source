@@ -25,7 +25,7 @@ class PostController extends ApiController
      */
     public function index(Request $request, PostFilter $postFilter)
     {
-        return $this->httpOK(Post::query()->filter($postFilter)->paginate(), PostTransformer::class);
+        return $this->httpOK(Post::query()->filter($postFilter)->simplePaginate($request->query('per_page')), PostTransformer::class);
     }
 
     /**
