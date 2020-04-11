@@ -14,9 +14,12 @@
         "flugger/laravel-responder": "^3.1",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "spatie/laravel-permission": "^3.11"
+        "league/flysystem-aws-s3-v3": "~1.0",
+        "spatie/laravel-permission": "^3.11",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
