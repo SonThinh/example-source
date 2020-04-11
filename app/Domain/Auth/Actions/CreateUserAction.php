@@ -4,6 +4,7 @@
 namespace App\Domain\Auth\Actions;
 
 use App\Domain\Auth\Models\User;
+use Illuminate\Support\Arr;
 
 class CreateUserAction
 {
