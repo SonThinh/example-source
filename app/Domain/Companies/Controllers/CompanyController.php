@@ -4,7 +4,7 @@
 namespace App\Domain\Companies\Controllers;
 
 use App\Domain\Companies\Action\CreateCompanyAction;
-use App\Domain\Companies\Action\UpdateConpanyAction;
+use App\Domain\Companies\Action\UpdateCompanyAction;
 use App\Domain\Companies\Filters\CompanyFilter;
 use App\Domain\Companies\Models\Company;
 use App\Domain\Companies\Requests\CreateCompanyRequest;
@@ -58,10 +58,10 @@ class CompanyController extends ApiController
      *
      * @param UpdateCompanyRequest $request
      * @param Company $company
-     * @param UpdateConpanyAction $action
+     * @param UpdateCompanyAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function update(UpdateCompanyRequest $request, Company $company, UpdateConpanyAction $action)
+    public function update(UpdateCompanyRequest $request, Company $company, UpdateCompanyAction $action)
     {
         $action->execute($company, $request->validated());
         return $this->httpNoContent();
