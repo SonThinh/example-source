@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 
 class PostSeeder extends Seeder
 {
-    protected $total = 1000;
+    protected $total = 200;
     protected $chunk = 100;
 
     /**
