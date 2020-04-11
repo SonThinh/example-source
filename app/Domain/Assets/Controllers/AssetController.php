@@ -31,7 +31,11 @@ class AssetController extends ApiController
     public function show(string $path)
     {
         $asset = Asset::wherePath($path)->firstOrFail();
-        return Image::make(Storage::disk($asset->disk)->path($asset->path))->response();
+        $path = Storage::disk($asset->disk)->path($asset->path);
+        header('Cache-control: max-age='.(60 * 60 * 24 * 365));
+        header('Expires: '.gmdate(DATE_RFC1123, time() + 60 * 60 * 24 * 365));
+        header('Last-Modified: '.gmdate(DATE_RFC1123, filemtime($path)));
+        return Image::make($path)->response();
     }
 
     /**
