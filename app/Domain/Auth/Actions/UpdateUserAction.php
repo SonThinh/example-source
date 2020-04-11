@@ -10,8 +10,8 @@ use Illuminate\Support\Arr;
 class UpdateUserAction
 {
     /**
-     * @param User $user
-     * @param array $data
+     * @param  User  $user
+     * @param  array  $data
      * @return User|bool|\Illuminate\Database\Eloquent\Model
      */
     public function execute(User $user, array $data)
@@ -20,8 +20,13 @@ class UpdateUserAction
         $user->save();
 
         if ($contactData = Arr::get($data, 'contact')) {
-            $user->contact()->updateOrCreate(Arr::get($data, 'contact'));
+            $attributes = [
+                'contactable_id' => $user->id,
+                'contactable_type' => $user->getMorphClass()
+            ];
+            $user->contact()->updateOrCreate($attributes, Arr::get($data, 'contact'));
         }
+
         return $user;
     }
 }
