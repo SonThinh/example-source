@@ -9,18 +9,17 @@ use Illuminate\Support\Arr;
 class UpdatePostAction
 {
     /**
-     * @param Post $post
-     * @param array $data
+     * @param  Post  $post
+     * @param  array  $data
      * @return Post|bool|\Illuminate\Database\Eloquent\Model
      */
     public function execute(Post $post, array $data)
     {
-        $post->fill(Arr::except($data, 'delivery_target'));
-        $post->save();
-        
-        $deliveryTarget = $post->deliveryTarget;
-        $deliveryTarget->fill(Arr::get($data, 'delivery_target'));
-        $deliveryTarget->save();
+        $post->update(Arr::except($data, 'delivery_target'));
+        if ($deliveryTargetData = Arr::get($data, 'delivery_target')) {
+            $attributes = ['post_id' => $post->id];
+            $post->deliveryTarget()->updateOrCreate($attributes, $deliveryTargetData);
+        }
         return $post;
     }
 }
