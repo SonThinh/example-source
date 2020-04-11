@@ -7,6 +7,8 @@ use App\Domain\Support\Filters\EloquentFilter;
 use App\Domain\Support\Filters\Filter;
 use Closure;
 use Illuminate\Database\Eloquent\Builder as BaseBuilder;
+use Illuminate\Database\Query\Builder as QueryBuilder;
+use Illuminate\Support\Arr;
 
 class Builder extends BaseBuilder implements EloquentFilter
 {
@@ -77,18 +79,18 @@ class Builder extends BaseBuilder implements EloquentFilter
     /**
      * @param  string  $column
      * @param  array  $value
-     * @return Builder|\Illuminate\Database\Query\Builder
+     * @return Builder
      */
     public function whereDateRange($column, array $value = [])
     {
         $from = Arr::get($value, 'from', '');
         $to = Arr::get($value, 'to', '');
-        $this->query->where(function (Builder $query) use ($column, $from, $to) {
+        $this->query->where(function (QueryBuilder $query) use ($column, $from, $to) {
             return $query
-                ->when($from, function (Builder $query) use ($column, $from) {
+                ->when($from, function (QueryBuilder $query) use ($column, $from) {
                     return $query->where($column, '>=', $from);
                 })
-                ->when($to, function (Builder $query) use ($column, $to) {
+                ->when($to, function (QueryBuilder $query) use ($column, $to) {
                     return $query->where($column, '<=', $to);
                 });
         });
