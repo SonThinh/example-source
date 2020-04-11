@@ -25,6 +25,7 @@ class UpdatePostRequest extends ApiRequest
             'delivery_target' => 'filled|array',
             'delivery_target.prefecture_id' => 'sometimes|string|exists:prefectures,id',
             'delivery_target.company_id' => 'sometimes|string|exists:companies,id',
+            'delivery_target.category_id' => 'filled|string|exists:categories,id'
         ];
     }
 

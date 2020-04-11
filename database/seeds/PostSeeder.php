@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\DB;
 
 class PostSeeder extends Seeder
 {
-    protected $total = 100;
-    protected $chunk = 10;
+    protected $total = 1000;
+    protected $chunk = 100;
 
     /**
      * Run the database seeds.
@@ -50,8 +50,8 @@ class PostSeeder extends Seeder
                 'id' => $faker->uuid,
                 'title' => $faker->sentence,
                 'content' => $faker->paragraphs(3, true),
-                'created_at' => now()->format('Y-m-d H:i:s'),
-                'updated_at' => now()->format('Y-m-d H:i:s'),
+                'created_at' => $faker->dateTime()->format('Y-m-d H:i:s'),
+                'updated_at' => $faker->dateTime()->format('Y-m-d H:i:s')
             ];
         }
         return $posts;

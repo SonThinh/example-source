@@ -22,9 +22,10 @@ class CreatePostRequest extends ApiRequest
             'display_order' => 'filled|integer',
             'publish_from' => 'filled|string',
             'publish_to' => 'filled|string',
-            'delivery_target' => 'filled|array',
+            'delivery_target' => 'nullable|array',
             'delivery_target.prefecture_id' => 'filled|string|exists:prefectures,id',
             'delivery_target.company_id' => 'filled|string|exists:companies,id',
+            'delivery_target.category_id' => 'filled|string|exists:categories,id',
         ];
     }
 
