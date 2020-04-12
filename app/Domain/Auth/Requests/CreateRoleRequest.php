@@ -15,9 +15,10 @@ class CreateRoleRequest extends ApiRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:roles,name',
-            'display_name' => 'required|string',
-            'description' => 'required|string'
+            'name'              => 'required|unique:roles,name',
+            'display_name'      => 'required|string',
+            'description'       => 'required|string',
+            'permissions'       => 'exists:permissions,id',
         ];
     }
 
