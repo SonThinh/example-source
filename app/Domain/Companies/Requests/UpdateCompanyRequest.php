@@ -15,7 +15,7 @@ class UpdateCompanyRequest extends ApiRequest
     public function rules()
     {
         return [
-            'code'                 => 'sometimes|string|unique:companies,code,' . $this->route('company'),
+            'code'                 => 'sometimes|string|unique:companies,code,' . $this->route('company')->id,
             'name'                 => 'sometimes|string',
             'contact'              => 'filled|array',
             'contact.postcode'     => 'filled|string',
@@ -34,6 +34,6 @@ class UpdateCompanyRequest extends ApiRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 }
