@@ -22,12 +22,12 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // Create permissions
         foreach (PermissionType::toArray() as $display_name => $name) {
-            Permission::create(['name' => $name, 'display_name' => Str::singular($display_name)]);
+            Permission::updateOrCreate(['name' => $name, 'display_name' => Str::singular($display_name)]);
         }
 
         // Create roles
         foreach (UserType::toArray() as $display_name => $name) {
-            Role::create(['name' => $name, 'display_name' => Str::singular($display_name)]);
+            Role::updateOrCreate(['name' => $name, 'display_name' => Str::singular($display_name)]);
         }
 
         // Give all permission to role super admin

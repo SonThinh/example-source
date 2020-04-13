@@ -3,6 +3,7 @@
 namespace App\Domain\Posts\Models;
 
 
+use App\Domain\Assets\Models\Asset;
 use App\Domain\Posts\Builders\PostBuilder;
 use App\Domain\Support\Traits\HasUuid;
 use App\Domain\Support\Traits\OverridesBuilder;
@@ -57,5 +58,10 @@ class Post extends Model
     public function deliveryTarget()
     {
         return $this->hasOne(DeliveryTarget::class, 'post_id');
+    }
+
+    public function assets()
+    {
+        return $this->belongsToMany(Asset::class, 'asset_post');
     }
 }

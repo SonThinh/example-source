@@ -4,6 +4,7 @@
 namespace App\Domain\Assets\Models;
 
 use App\Domain\Assets\Builders\AssetBuilder;
+use App\Domain\Posts\Models\Post;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -67,5 +68,14 @@ class Asset extends Model
             default:
                 return '';
         }
+    }
+
+    // ======================================================================
+    // Relationships
+    // ======================================================================
+
+    public function posts()
+    {
+        return $this->belongsToMany(Post::class, 'asset_post');
     }
 }

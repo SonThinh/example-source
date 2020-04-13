@@ -18,7 +18,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Category::class, function (Faker $faker) {
     return [
-        'display_name' => $faker->safeColorName,
+        'display_name' => $faker->unique()->words(3, true),
         'display_order' => $faker->randomElement(range(0,9)),
     ];
 });

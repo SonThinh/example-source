@@ -33,7 +33,6 @@ class CategoryTransformer extends Transformer
         return [
             'id' => (string)$category->id,
             'category_type' => (string)$category->category_type,
-            'category_code' => (string)$category->category_code,
             'display_name' => (string)$category->display_name,
             'display_order' => (int)$category->display_order,
         ];
