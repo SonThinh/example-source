@@ -2,10 +2,18 @@
 
 namespace App\Domain\Auth\Models;
 
+use App\Domain\Auth\Builders\PermissionBuilder;
+use App\Domain\Support\Traits\OverridesBuilder;
 use Spatie\Permission\Models\Permission as BasePermission;
 
 class Permission extends BasePermission
 {
+    use OverridesBuilder;
+
+    public function provideCustomBuilder()
+    {
+        return PermissionBuilder::class;
+    }
 
     /**
      * The attributes that are mass assignable.
