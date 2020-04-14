@@ -21,6 +21,9 @@ class CreatePostAction
             $attributes = ['post_id' => $post->id];
             $post->deliveryTarget()->firstOrCreate($attributes, $deliveryTargetData);
         }
+        if ($assetData = Arr::get($data, 'assets')){
+            $post->assets()->attach(Arr::get($data, 'assets'));
+        }
         return $post;
     }
 }

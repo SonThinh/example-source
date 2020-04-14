@@ -20,6 +20,9 @@ class UpdatePostAction
             $attributes = ['post_id' => $post->id];
             $post->deliveryTarget()->updateOrCreate($attributes, $deliveryTargetData);
         }
+        if ($assetData = Arr::get($data, 'assets')){
+            $post->assets()->sync(Arr::get($data, 'assets'));
+        }
         return $post;
     }
 }
