@@ -35,7 +35,8 @@ class DeliveryTargetTransformer extends Transformer
             'id' => (int)$target->id,
             'post_id' => (string)$target->post_id,
             'prefecture_id' => (string)$target->prefecture_id,
-            'company_id' => (string)$target->company_id
+            'company_id' => (string)$target->company_id,
+            'category_id' => (string) $target->category_id
         ];
     }
 }

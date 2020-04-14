@@ -19,7 +19,7 @@ class DeliveryTarget extends Model
      *
      * @var array
      */
-    protected $fillable = ['post_id', 'prefecture_id', 'company_id'];
+    protected $fillable = ['post_id', 'prefecture_id', 'company_id', 'category_id'];
 
     /**
      * The attributes that should be hidden for arrays.

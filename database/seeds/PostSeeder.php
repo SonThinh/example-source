@@ -50,6 +50,8 @@ class PostSeeder extends Seeder
                 'id' => $faker->uuid,
                 'title' => $faker->sentence,
                 'content' => $faker->paragraphs(3, true),
+                'publish_from' => now(),
+                'publish_to' => now()->addMonth(),
                 'created_at' => $faker->dateTime()->format('Y-m-d H:i:s'),
                 'updated_at' => $faker->dateTime()->format('Y-m-d H:i:s')
             ];
