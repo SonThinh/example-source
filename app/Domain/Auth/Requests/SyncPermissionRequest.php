@@ -6,7 +6,7 @@ namespace App\Domain\Auth\Requests;
 
 use App\Domain\Support\Requests\ApiRequest;
 
-class AssignRoleRequest extends ApiRequest
+class SyncPermissionRequest extends ApiRequest
 {
 
     /**
@@ -15,8 +15,8 @@ class AssignRoleRequest extends ApiRequest
     public function rules()
     {
         return [
-            'roles' => 'required|array',
-            'roles.*' => 'required:roles|string|exists:roles,id',
+            'permissions' => 'required|array',
+            'permissions.*' => 'required|exists:permissions,id',
         ];
     }
 

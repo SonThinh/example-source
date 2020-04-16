@@ -5,6 +5,7 @@ use App\Domain\Auth\Controllers\AdminController;
 use App\Domain\Auth\Controllers\AdminRoleController;
 use App\Domain\Auth\Controllers\AuthController;
 use App\Domain\Auth\Controllers\PermissionController;
+use App\Domain\Auth\Controllers\PermissionRoleController;
 use App\Domain\Auth\Controllers\ProfileController;
 use App\Domain\Auth\Controllers\RoleController;
 use App\Domain\Auth\Controllers\UserController;
@@ -43,6 +44,7 @@ Route::middleware('auth:admin,user')->group(function () {
     Route::apiResource('posts', PostController::class);
     Route::apiResource('permissions', PermissionController::class);
     Route::apiResource('roles', RoleController::class);
+    Route::apiResource('roles.permissions', PermissionRoleController::class)->only('index', 'store');
     Route::apiResource('admins.roles', AdminRoleController::class)->only('store');
     Route::match(['PUT', 'PATCH', 'POST'], 'assets/upload', [AssetController::class, 'upload']);
     Route::get('assets', [AssetController::class, 'index']);

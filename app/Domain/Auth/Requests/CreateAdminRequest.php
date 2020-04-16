@@ -17,6 +17,8 @@ class CreateAdminRequest extends ApiRequest
         return [
             'name' => 'required|string',
             'username' => 'required|string|unique:admins,username',
+            'roles' => 'required|array',
+            'roles.*' => 'required:roles|string|exists:roles,id',
             'password' => 'required|confirmed',
         ];
     }
