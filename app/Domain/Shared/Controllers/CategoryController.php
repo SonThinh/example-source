@@ -3,9 +3,11 @@
 
 namespace App\Domain\Shared\Controllers;
 
+use App\Domain\Shared\Filters\CategoryFilter;
 use App\Domain\Shared\Models\Category;
 use App\Domain\Shared\Requests\CreateCategoryRequest;
 use App\Domain\Shared\Requests\UpdateCategoryRequest;
+use App\Domain\Shared\Sorts\CategorySort;
 use App\Domain\Shared\Transformers\CategoryTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
@@ -21,11 +23,13 @@ class CategoryController extends ApiController
      * Display a listing of the resource.
      *
      * @param Request $request
+     * @param CategoryFilter $categoryFilter
+     * @param CategorySort $categorySort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request)
+    public function index(Request $request, CategoryFilter $categoryFilter, CategorySort $categorySort )
     {
-        return $this->httpOK(Category::all(), CategoryTransformer::class);
+        return $this->httpOK(Category::query()->filter($categoryFilter)->sortBy($categorySort)->paginate(), CategoryTransformer::class);
     }
 
     /**

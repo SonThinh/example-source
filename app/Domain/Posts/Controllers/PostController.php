@@ -8,6 +8,7 @@ use App\Domain\Posts\Actions\CreatePostAction;
 use App\Domain\Posts\Actions\UpdatePostAction;
 use App\Domain\Posts\Filters\PostFilter;
 use App\Domain\Posts\Models\Post;
+use App\Domain\Posts\Sorts\PostSort;
 use App\Domain\Posts\Requests\CreatePostRequest;
 use App\Domain\Posts\Requests\UpdatePostRequest;
 use App\Domain\Posts\Transformers\PostTransformer;
@@ -27,11 +28,12 @@ class PostController extends ApiController
      *
      * @param Request $request
      * @param PostFilter $postFilter
+     * @param PostSort $postOrderBy
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, PostFilter $postFilter)
+    public function index(Request $request, PostFilter $postFilter, PostSort $postOrderBy)
     {
-        return $this->httpOK(Post::query()->filter($postFilter)->simplePaginate($request->query('per_page')), PostTransformer::class);
+        return $this->httpOK(Post::query()->filter($postFilter)->sortBy($postOrderBy)->simplePaginate($request->query('per_page')), PostTransformer::class);
     }
 
     /**

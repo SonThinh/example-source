@@ -9,6 +9,7 @@ use App\Domain\Companies\Filters\CompanyFilter;
 use App\Domain\Companies\Models\Company;
 use App\Domain\Companies\Requests\CreateCompanyRequest;
 use App\Domain\Companies\Requests\UpdateCompanyRequest;
+use App\Domain\Companies\Sorts\CompanySort;
 use App\Domain\Companies\Transformers\CompanyTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
@@ -19,16 +20,18 @@ class CompanyController extends ApiController
     {
         $this->authorizeResource(Company::class);
     }
+
     /**
      * Display a listing of the resource.
      *
      * @param Request $request
      * @param CompanyFilter $companyFilter
+     * @param CompanySort $companySort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, CompanyFilter $companyFilter)
+    public function index(Request $request, CompanyFilter $companyFilter, CompanySort $companySort)
     {
-        return $this->httpOK(Company::query()->filter($companyFilter)->paginate(), CompanyTransformer::class);
+        return $this->httpOK(Company::query()->filter($companyFilter)->sortBy($companySort)->paginate(), CompanyTransformer::class);
     }
 
     /**

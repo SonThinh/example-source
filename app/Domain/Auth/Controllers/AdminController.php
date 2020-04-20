@@ -8,6 +8,7 @@ use App\Domain\Auth\Filters\AdminFilter;
 use App\Domain\Auth\Models\Admin;
 use App\Domain\Auth\Requests\CreateAdminRequest;
 use App\Domain\Auth\Requests\UpdateAdminRequest;
+use App\Domain\Auth\Sorts\AdminSort;
 use App\Domain\Auth\Transformers\AdminTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
@@ -26,9 +27,9 @@ class AdminController extends ApiController
      * @param AdminFilter $adminFilter
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, AdminFilter $adminFilter)
+    public function index(Request $request, AdminFilter $adminFilter, AdminSort $adminSort)
     {
-        return $this->httpOK(Admin::query()->filter($adminFilter)->paginate(), AdminTransformer::class);
+        return $this->httpOK(Admin::query()->filter($adminFilter)->sortBy($adminSort)->paginate(), AdminTransformer::class);
     }
 
     /**
