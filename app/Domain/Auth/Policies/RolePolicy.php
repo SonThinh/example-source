@@ -4,6 +4,7 @@
 namespace App\Domain\Auth\Policies;
 
 
+use App\Domain\Auth\Enums\PermissionType;
 use App\Domain\Auth\Models\Role;
 use App\Domain\Support\BasePolicy;
 use App\Domain\Support\Interfaces\AuthInterface;
@@ -14,27 +15,22 @@ class RolePolicy extends BasePolicy
     use HandlesAuthorization;
 
     public function viewAny(AuthInterface $user){
-        $permission = 'view-role';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::VIEW_ROLE);
     }
 
     public function view(AuthInterface $user, Role $role){
-        $permission = 'view-role';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::VIEW_ROLE);
     }
 
     public function create(AuthInterface $user){
-        $permission = 'create-role';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::CREATE_ROLE);
     }
 
     public function update(AuthInterface $user, Role $role){
-        $permission = 'update-role';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::UPDATE_ROLE);
     }
 
     public function delete(AuthInterface $user, Role $role){
-        $permission = 'delete-role';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::DELETE_ROLE);
     }
 }

@@ -4,6 +4,7 @@
 namespace App\Domain\Shared\Policies;
 
 
+use App\Domain\Auth\Enums\PermissionType;
 use App\Domain\Shared\Models\Category;
 use App\Domain\Support\BasePolicy;
 use App\Domain\Support\Interfaces\AuthInterface;
@@ -14,27 +15,22 @@ class CategoryPolicy extends BasePolicy
     use HandlesAuthorization;
 
     public function viewAny(AuthInterface $user){
-        $permission = 'view-category';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::VIEW_CATEGORY);
     }
 
     public function view(AuthInterface $user, Category $category){
-        $permission = 'view-category';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::VIEW_CATEGORY);
     }
 
     public function create(AuthInterface $user){
-        $permission = 'create-category';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::CREATE_CATEGORY);
     }
 
     public function update(AuthInterface $user, Category $category){
-        $permission = 'update-category';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::UPDATE_CATEGORY);
     }
 
     public function delete(AuthInterface $user, Category $category){
-        $permission = 'delete-category';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::DELETE_CATEGORY);
     }
 }

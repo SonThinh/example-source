@@ -9,8 +9,8 @@ use App\Domain\Support\Interfaces\AuthInterface;
 
 class BasePolicy
 {
-    public function before() {
-
+    public function before(AuthInterface $user) {
+        return $user->hasRole('super-admin');
     }
 
     public function author(AuthInterface $user, String $permission){

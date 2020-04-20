@@ -4,6 +4,7 @@
 namespace App\Domain\Companies\Policies;
 
 
+use App\Domain\Auth\Enums\PermissionType;
 use App\Domain\Companies\Models\Company;
 use App\Domain\Support\BasePolicy;
 use App\Domain\Support\Interfaces\AuthInterface;
@@ -14,28 +15,23 @@ class CompanyPolicy extends BasePolicy
     use HandlesAuthorization;
 
     public function viewAny(AuthInterface $user){
-        $permission = 'view-company';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::VIEW_COMPANY);
     }
 
     public function view(AuthInterface $user, Company $company){
-        $permission = 'view-company';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::VIEW_COMPANY);
     }
 
     public function create(AuthInterface $user){
-        $permission = 'create-company';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::CREATE_COMPANY);
     }
 
     public function update(AuthInterface $user, Company $company){
-        $permission = 'update-company';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::UPDATE_COMPANY);
     }
 
     public function delete(AuthInterface $user, Company $company){
-        $permission = 'delete-company';
-        return $this->author($user, $permission);
+        return $this->author($user, PermissionType::DELETE_COMPANY);
     }
 
 }
