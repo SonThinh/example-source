@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Domain\Auth\Models\Admin;
+use App\Domain\Auth\Models\Role;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
         Route::model('admin', Admin::class);
+        Route::model('role', Role::class);
     }
 
     /**

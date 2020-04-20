@@ -22,4 +22,16 @@ class ContactController extends ApiController
     {
         return $this->httpOK(Contact::query()->filter($contactFilter)->paginate(), ContactTransformer::class);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Request $request
+     * @param Contact $contact
+     * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     */
+    public function show(Request $request, Contact $contact)
+    {
+        return $this->httpOK($contact, ContactTransformer::class);
+    }
 }

@@ -22,9 +22,9 @@ trait HasTransformer
     /**
      * Build a HTTP_OK response.
      *
-     * @param mixed $data
-     * @param callable|string|Transformer|null $transformer
-     * @param string|null $resourceKey
+     * @param  mixed  $data
+     * @param  callable|string|Transformer|null  $transformer
+     * @param  string|null  $resourceKey
      * @return SuccessResponseBuilder|JsonResponse
      */
     public function httpOK($data = null, $transformer = null, string $resourceKey = null)
@@ -40,7 +40,7 @@ trait HasTransformer
     }
 
     /**
-     * @param mixed $serializer
+     * @param  mixed  $serializer
      * @return $this
      */
     protected function setSerializer($serializer)
@@ -52,9 +52,9 @@ trait HasTransformer
     /**
      * Build a HTTP_CREATED response.
      *
-     * @param mixed $data
-     * @param callable|string|Transformer|null $transformer
-     * @param string|null $resourceKey
+     * @param  mixed  $data
+     * @param  callable|string|Transformer|null  $transformer
+     * @param  string|null  $resourceKey
      * @return SuccessResponseBuilder|JsonResponse
      */
     public function httpCreated($data = null, $transformer = null, string $resourceKey = null)
@@ -79,7 +79,7 @@ trait HasTransformer
     /**
      * Build a HTTP_BAD_REQUEST response.
      *
-     * @param array $errors
+     * @param  array  $errors
      * @return JsonResponse
      */
     public function httpBadRequest(array $errors = [])

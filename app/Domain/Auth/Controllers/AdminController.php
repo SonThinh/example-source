@@ -14,6 +14,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends ApiController
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Admin::class);
+    }
+
     /**
      * Display a listing of the resource.
      *

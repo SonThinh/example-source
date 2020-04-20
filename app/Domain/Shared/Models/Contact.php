@@ -23,6 +23,7 @@ class Contact extends Model
      */
     protected $fillable = [
         'postcode', 'city', 'free_dial', 'tel', 'fax', 'email', 'website', 'address',
+        'contactable_id', 'contactable_type'
     ];
 
     /**

@@ -16,7 +16,9 @@ class CreateAdminRequest extends ApiRequest
     {
         return [
             'name' => 'required|string',
-            'username' => 'required|email|unique:admins,username',
+            'username' => 'required|string|unique:admins,username',
+            'roles' => 'required|array',
+            'roles.*' => 'required:roles|string|exists:roles,id',
             'password' => 'required|confirmed',
         ];
     }
@@ -26,6 +28,6 @@ class CreateAdminRequest extends ApiRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 }

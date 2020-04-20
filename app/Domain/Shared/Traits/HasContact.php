@@ -6,7 +6,7 @@ namespace App\Domain\Shared\Traits;
 use App\Domain\Shared\Models\Contact;
 use Illuminate\Database\Eloquent\Model;
 
-trait HasContacts
+trait HasContact
 {
     public static function bootHasContacts()
     {

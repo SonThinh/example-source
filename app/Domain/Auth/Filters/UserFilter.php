@@ -5,13 +5,16 @@
 namespace App\Domain\Auth\Filters;
 
 use App\Domain\Support\Filters\Filter;
+use App\Domain\Support\Traits\CommonFilter;
 
 class UserFilter extends Filter
 {
+    use CommonFilter;
+    
     /**
      * Filter user by name
      *
-     * @param string $name
+     * @param  string  $name
      * @return \App\Domain\Support\Builder
      */
     public function name($name)
@@ -22,7 +25,7 @@ class UserFilter extends Filter
     /**
      * Filter user by email
      *
-     * @param string $email
+     * @param  string  $email
      * @return \App\Domain\Support\Builder
      */
     public function email($email)

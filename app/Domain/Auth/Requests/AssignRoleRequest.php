@@ -16,7 +16,7 @@ class AssignRoleRequest extends ApiRequest
     {
         return [
             'roles' => 'required|array',
-            'roles.*' => 'required_with:roles|string|exists:roles,name',
+            'roles.*' => 'required:roles|string|exists:roles,id',
         ];
     }
 

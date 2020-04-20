@@ -3,7 +3,6 @@
 
 namespace App\Domain\Shared\Transformers;
 
-use App\Domain\Auth\Transformers\UserTransformer;
 use App\Domain\Shared\Models\Contact;
 use Flugg\Responder\Transformers\Transformer;
 
@@ -14,9 +13,7 @@ class ContactTransformer extends Transformer
      *
      * @var string[]
      */
-    protected $relations = [
-        'user' => UserTransformer::class
-    ];
+    protected $relations = [];
 
     /**
      * A list of autoloaded default relations.
@@ -36,6 +33,8 @@ class ContactTransformer extends Transformer
         return [
             'id' => (string)$contact->id,
             'postcode' => (string)$contact->postcode,
+            'contactable_id' => (string)$contact->contactable_id,
+            'contactable_type' => (string)$contact->contactable_type,
             'city' => (string)$contact->city,
             'free_dial' => (string)$contact->free_dial,
             'tel' => (string)$contact->tel,

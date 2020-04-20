@@ -3,7 +3,8 @@
 namespace App\Domain\Auth\Models;
 
 use App\Domain\Auth\Builders\UserBuilder;
-use App\Domain\Shared\Traits\HasContacts;
+use App\Domain\Shared\Traits\HasContact;
+use App\Domain\Support\Interfaces\AuthInterface;
 use App\Domain\Support\Traits\HasUuid;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,13 +12,18 @@ use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable implements JWTSubject, AuthInterface
 {
     use Notifiable;
     use HasUuid;
     use HasRoles;
-    use HasContacts;
+    use HasContact;
     use OverridesBuilder;
+
+    public function isAdmin(): bool
+    {
+        return false;
+    }
 
     public function provideCustomBuilder()
     {
@@ -66,7 +72,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'gender', 'birthday', 'email'
+        'first_name', 'last_name', 'gender', 'birthday', 'email', 'password'
     ];
 
     /**

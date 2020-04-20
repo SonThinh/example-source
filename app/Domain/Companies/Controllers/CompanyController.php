@@ -3,6 +3,8 @@
 
 namespace App\Domain\Companies\Controllers;
 
+use App\Domain\Companies\Action\CreateCompanyAction;
+use App\Domain\Companies\Action\UpdateCompanyAction;
 use App\Domain\Companies\Filters\CompanyFilter;
 use App\Domain\Companies\Models\Company;
 use App\Domain\Companies\Requests\CreateCompanyRequest;
@@ -13,6 +15,10 @@ use Illuminate\Http\Request;
 
 class CompanyController extends ApiController
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Company::class);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,11 +47,13 @@ class CompanyController extends ApiController
      * Store a newly created resource in storage.
      *
      * @param CreateCompanyRequest $request
+     * @param CreateCompanyAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     * @throws \Throwable
      */
-    public function store(CreateCompanyRequest $request)
+    public function store(CreateCompanyRequest $request, CreateCompanyAction $action)
     {
-        $company = Company::create($request->validated());
+        $company = $action->execute($request->validated());
         return $this->httpCreated($company, CompanyTransformer::class);
     }
 
@@ -54,11 +62,12 @@ class CompanyController extends ApiController
      *
      * @param UpdateCompanyRequest $request
      * @param Company $company
+     * @param UpdateCompanyAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function update(UpdateCompanyRequest $request, Company $company)
+    public function update(UpdateCompanyRequest $request, Company $company, UpdateCompanyAction $action)
     {
-        $company->update($request->validated());
+        $action->execute($company, $request->validated());
         return $this->httpNoContent();
     }
 

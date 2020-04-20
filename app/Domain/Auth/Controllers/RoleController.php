@@ -4,6 +4,8 @@
 
 namespace App\Domain\Auth\Controllers;
 
+use App\Domain\Auth\Actions\CreateRoleAction;
+use App\Domain\Auth\Actions\UpdateRoleAction;
 use App\Domain\Auth\Models\Role;
 use App\Domain\Auth\Requests\CreateRoleRequest;
 use App\Domain\Auth\Requests\UpdateRoleRequest;
@@ -13,6 +15,11 @@ use Illuminate\Http\Request;
 
 class RoleController extends ApiController
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Role::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +28,7 @@ class RoleController extends ApiController
      */
     public function index(Request $request)
     {
-        return $this->httpOK(Role::query()->paginate(), RoleTransformer::class);
+        return $this->httpOK(Role::all(), RoleTransformer::class);
     }
 
     /**
@@ -40,12 +47,14 @@ class RoleController extends ApiController
      * Store a newly created resource in storage.
      *
      * @param CreateRoleRequest $request
+     * @param CreateRoleAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     * @throws \Throwable
      */
-    public function store(CreateRoleRequest $request)
+    public function store(CreateRoleRequest $request, CreateRoleAction $action)
     {
-        $admin = Role::create($request->validated());
-        return $this->httpCreated($admin, RoleTransformer::class);
+        $role = $action->execute($request->validated());
+        return $this->httpCreated($role, RoleTransformer::class);
     }
 
     /**
@@ -53,11 +62,12 @@ class RoleController extends ApiController
      *
      * @param UpdateRoleRequest $request
      * @param Role $role
+     * @param UpdateRoleAction $action
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function update(UpdateRoleRequest $request, Role $role)
+    public function update(UpdateRoleRequest $request, Role $role, UpdateRoleAction $action)
     {
-        $role->update($request->validated());
+        $action->execute($role,$request->validated());
         return $this->httpNoContent();
     }
 

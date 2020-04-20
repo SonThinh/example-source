@@ -42,7 +42,7 @@ abstract class Filter
             if (!method_exists($this, $method)) {
                 continue;
             }
-            if (strlen($value)) {
+            if ((is_string($value) && strlen($value)) || (is_array($value) && !empty($value))) {
                 $this->{$method}($value);
             }
         }

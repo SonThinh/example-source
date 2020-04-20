@@ -4,6 +4,7 @@ use App\Domain\Auth\Enums\PermissionType;
 use App\Domain\Auth\Enums\UserType;
 use App\Domain\Auth\Models\Permission;
 use App\Domain\Auth\Models\Role;
+use App\Domain\Auth\Models\Admin;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Spatie\Permission\PermissionRegistrar;
@@ -22,16 +23,20 @@ class RolesAndPermissionsSeeder extends Seeder
 
         // Create permissions
         foreach (PermissionType::toArray() as $display_name => $name) {
-            Permission::create(['name' => $name, 'display_name' => Str::singular($display_name)]);
+            Permission::updateOrCreate(['name' => $name, 'display_name' => Str::singular($display_name)]);
         }
 
         // Create roles
         foreach (UserType::toArray() as $display_name => $name) {
-            Role::create(['name' => $name, 'display_name' => Str::singular($display_name)]);
+            Role::updateOrCreate(['name' => $name, 'display_name' => Str::singular($display_name)]);
         }
 
         // Give all permission to role super admin
         $role = Role::findByName(UserType::SUPER_ADMIN);
         $role->givePermissionTo(Permission::all());
+
+        // Created super admin
+        $superadmin = factory(Admin::class)->create(['username' => 'superadmin']);
+        $superadmin->assignRole($role);
     }
 }
