@@ -6,6 +6,7 @@ namespace App\Domain\Auth\Controllers;
 
 use App\Domain\Auth\Filters\PermissionFilter;
 use App\Domain\Auth\Models\Permission;
+use App\Domain\Auth\Sorts\PermissionSort;
 use App\Domain\Auth\Transformers\PermissionTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
@@ -19,8 +20,8 @@ class PermissionController extends ApiController
      * @param  PermissionFilter  $permissionFilter
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, PermissionFilter $permissionFilter)
+    public function index(Request $request, PermissionFilter $permissionFilter, PermissionSort $permissionSort)
     {
-        return $this->httpOK(Permission::query()->filter($permissionFilter)->get(), PermissionTransformer::class);
+        return $this->httpOK(Permission::query()->filter($permissionFilter)->sortBy($permissionSort)->get(), PermissionTransformer::class);
     }
 }

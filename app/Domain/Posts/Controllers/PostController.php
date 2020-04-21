@@ -28,12 +28,12 @@ class PostController extends ApiController
      *
      * @param Request $request
      * @param PostFilter $postFilter
-     * @param PostSort $postOrderBy
+     * @param PostSort $postSort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, PostFilter $postFilter, PostSort $postOrderBy)
+    public function index(Request $request, PostFilter $postFilter, PostSort $postSort)
     {
-        return $this->httpOK(Post::query()->filter($postFilter)->sortBy($postOrderBy)->simplePaginate($request->query('per_page')), PostTransformer::class);
+        return $this->httpOK(Post::query()->filter($postFilter)->sortBy($postSort)->simplePaginate($request->query('per_page')), PostTransformer::class);
     }
 
     /**
