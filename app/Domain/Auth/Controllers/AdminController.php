@@ -25,6 +25,7 @@ class AdminController extends ApiController
      *
      * @param Request $request
      * @param AdminFilter $adminFilter
+     * @param AdminSort $adminSort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
     public function index(Request $request, AdminFilter $adminFilter, AdminSort $adminSort)
