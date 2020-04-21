@@ -5,6 +5,7 @@ namespace App\Domain\Shared\Controllers;
 
 use App\Domain\Shared\Filters\ContactFilter;
 use App\Domain\Shared\Models\Contact;
+use App\Domain\Shared\Sorts\ContactSort;
 use App\Domain\Shared\Transformers\ContactTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
@@ -16,11 +17,12 @@ class ContactController extends ApiController
      *
      * @param Request $request
      * @param ContactFilter $contactFilter
+     * @param ContactSort $contactSort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, ContactFilter $contactFilter)
+    public function index(Request $request, ContactFilter $contactFilter, ContactSort $contactSort)
     {
-        return $this->httpOK(Contact::query()->filter($contactFilter)->paginate(), ContactTransformer::class);
+        return $this->httpOK(Contact::query()->filter($contactFilter)->sortBy($contactSort)->paginate(), ContactTransformer::class);
     }
 
     /**

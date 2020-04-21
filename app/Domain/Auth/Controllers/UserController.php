@@ -10,6 +10,7 @@ use App\Domain\Auth\Filters\UserFilter;
 use App\Domain\Auth\Models\User;
 use App\Domain\Auth\Requests\CreateUserRequest;
 use App\Domain\Auth\Requests\UpdateUserRequest;
+use App\Domain\Auth\Sorts\UserSort;
 use App\Domain\Auth\Transformers\UserTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
@@ -26,11 +27,12 @@ class UserController extends ApiController
      *
      * @param Request $request
      * @param UserFilter $userFilter
+     * @param UserSort $userSort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, UserFilter $userFilter)
+    public function index(Request $request, UserFilter $userFilter, UserSort $userSort)
     {
-        return $this->httpOK(User::query()->filter($userFilter)->paginate(), UserTransformer::class);
+        return $this->httpOK(User::query()->filter($userFilter)->sortBy($userSort)->paginate(), UserTransformer::class);
     }
 
     /**

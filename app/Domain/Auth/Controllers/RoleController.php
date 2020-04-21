@@ -9,6 +9,7 @@ use App\Domain\Auth\Actions\UpdateRoleAction;
 use App\Domain\Auth\Models\Role;
 use App\Domain\Auth\Requests\CreateRoleRequest;
 use App\Domain\Auth\Requests\UpdateRoleRequest;
+use App\Domain\Auth\Sorts\RoleSort;
 use App\Domain\Auth\Transformers\RoleTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
@@ -24,11 +25,12 @@ class RoleController extends ApiController
      * Display a listing of the resource.
      *
      * @param Request $request
+     * @param RoleSort $roleSort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request)
+    public function index(Request $request, RoleSort $roleSort)
     {
-        return $this->httpOK(Role::all(), RoleTransformer::class);
+        return $this->httpOK(Role::query()->sortBy($roleSort)->get(), RoleTransformer::class);
     }
 
     /**
