@@ -14,7 +14,9 @@ class RoleTransformer extends Transformer
      *
      * @var string[]
      */
-    protected $relations = [];
+    protected $relations = [
+        'permissions' => PermissionTransformer::class
+    ];
 
     /**
      * A list of autoloaded default relations.
