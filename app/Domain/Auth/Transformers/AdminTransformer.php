@@ -14,7 +14,10 @@ class AdminTransformer extends Transformer
      *
      * @var string[]
      */
-    protected $relations = [];
+    protected $relations = [
+        'roles' => RoleTransformer::class,
+        'permissions' => PermissionTransformer::class,
+    ];
 
     /**
      * A list of autoloaded default relations.
