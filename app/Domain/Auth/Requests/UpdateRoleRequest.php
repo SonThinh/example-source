@@ -15,11 +15,11 @@ class UpdateRoleRequest extends ApiRequest
     public function rules()
     {
         return [
-            'name' => 'filled|unique:roles,name',
+            'name' => 'filled|unique:roles,name,'.$this->id,
             'display_name' => 'nullable|string',
             'description' => 'nullable|string',
             'permissions' => 'filled|array',
-            'permissions.*' => 'filled|exists:permissions,name',
+            'permissions.*' => 'filled|exists:permissions,id',
         ];
     }
 

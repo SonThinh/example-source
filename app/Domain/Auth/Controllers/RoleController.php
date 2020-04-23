@@ -6,6 +6,7 @@ namespace App\Domain\Auth\Controllers;
 
 use App\Domain\Auth\Actions\CreateRoleAction;
 use App\Domain\Auth\Actions\UpdateRoleAction;
+use App\Domain\Auth\Filters\RoleFilter;
 use App\Domain\Auth\Models\Role;
 use App\Domain\Auth\Requests\CreateRoleRequest;
 use App\Domain\Auth\Requests\UpdateRoleRequest;
@@ -25,12 +26,13 @@ class RoleController extends ApiController
      * Display a listing of the resource.
      *
      * @param Request $request
+     * @param \App\Domain\Auth\Filters\RoleFilter $roleFilter
      * @param RoleSort $roleSort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
-    public function index(Request $request, RoleSort $roleSort)
+    public function index(Request $request, RoleFilter $roleFilter, RoleSort $roleSort)
     {
-        return $this->httpOK(Role::query()->sortBy($roleSort)->get(), RoleTransformer::class);
+        return $this->httpOK(Role::query()->filter($roleFilter)->sortBy($roleSort)->get(), RoleTransformer::class);
     }
 
     /**
