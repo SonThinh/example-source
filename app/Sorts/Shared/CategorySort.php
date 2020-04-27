@@ -3,7 +3,7 @@
 namespace App\Sorts\Shared;
 
 use App\Sorts\Sort;
-use App\Domain\Support\Traits\CommonSort;
+use App\Traits\CommonSort;
 
 class CategorySort extends Sort
 {

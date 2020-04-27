@@ -12,7 +12,7 @@ class CompanyFilter extends Filter
      * Filter company by name
      *
      * @param string $name
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function name($name)
     {
@@ -23,7 +23,7 @@ class CompanyFilter extends Filter
      * Filter user by email
      *
      * @param string $code
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function code($code)
     {

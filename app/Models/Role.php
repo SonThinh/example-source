@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Domain\Auth\Builders\RoleBuilder;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Builders\Auth\RoleBuilder;
+use App\Traits\OverridesBuilder;
 use Spatie\Permission\Models\Role as BaseRole;
 
 class Role extends BaseRole

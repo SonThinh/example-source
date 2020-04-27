@@ -3,9 +3,9 @@
 
 namespace App\Models;
 
-use App\Domain\Assets\Builders\AssetBuilder;
 use App\Models\Post;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Builders\Assets\AssetBuilder;
+use App\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 

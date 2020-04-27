@@ -5,9 +5,9 @@ namespace App\Models;
 
 use App\Models\DeliveryTarget;
 use App\Models\Asset;
-use App\Domain\Posts\Builders\PostBuilder;
-use App\Domain\Support\Traits\HasUuid;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Builders\Posts\PostBuilder;
+use App\Traits\HasUuid;
+use App\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

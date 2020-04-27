@@ -5,7 +5,7 @@
 namespace App\Filters\Auth;
 
 use App\Filters\Filter;
-use App\Domain\Support\Traits\CommonFilter;
+use App\Traits\CommonFilter;
 
 class RoleFilter extends Filter
 {
@@ -15,7 +15,7 @@ class RoleFilter extends Filter
      * Filter role by name
      *
      * @param  string  $name
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function name($name)
     {
@@ -26,7 +26,7 @@ class RoleFilter extends Filter
      * Filter role by display name
      *
      * @param  string  $email
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function display_name($email)
     {

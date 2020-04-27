@@ -4,7 +4,7 @@
 namespace App\Filters\Auth;
 
 use App\Filters\Filter;
-use App\Domain\Support\Traits\CommonFilter;
+use App\Traits\CommonFilter;
 
 class AdminFilter extends Filter
 {
@@ -14,7 +14,7 @@ class AdminFilter extends Filter
      * Filter admin by name
      *
      * @param  string  $name
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function name($name)
     {
@@ -25,7 +25,7 @@ class AdminFilter extends Filter
      * Filter admin by username
      *
      * @param  string  $username
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function username($username)
     {

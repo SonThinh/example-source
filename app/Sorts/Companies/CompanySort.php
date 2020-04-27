@@ -4,7 +4,7 @@
 namespace App\Sorts\Companies;
 
 use App\Sorts\Sort;
-use App\Domain\Support\Traits\CommonSort;
+use App\Traits\CommonSort;
 
 class CompanySort extends Sort
 {

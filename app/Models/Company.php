@@ -3,10 +3,10 @@
 
 namespace App\Models;
 
-use App\Domain\Companies\Builders\CompanyBuilder;
-use App\Domain\Shared\Traits\HasContact;
-use App\Domain\Support\Traits\HasUuid;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Builders\Companies\CompanyBuilder;
+use App\Traits\HasContact;
+use App\Traits\HasUuid;
+use App\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model

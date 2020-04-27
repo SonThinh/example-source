@@ -3,8 +3,8 @@
 
 namespace App\Models;
 
-use App\Domain\Shared\Builders\ContactBuilder;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Builders\Shared\ContactBuilder;
+use App\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
