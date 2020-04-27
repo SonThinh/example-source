@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Domain\Shared\Builders\PostBuilder;
+use App\Builders\Posts\PostBuilder;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
 

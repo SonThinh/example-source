@@ -5,7 +5,6 @@ namespace App\Builders;
 
 use App\Filters\EloquentFilter;
 use App\Filters\Filter;
-use App\Domain\Support\Sorts\OrderBy;
 use App\Sorts\Sort;
 use Closure;
 use Illuminate\Database\Eloquent\Builder as BaseBuilder;
