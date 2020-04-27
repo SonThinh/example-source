@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Domain\Posts\Policies;
+namespace App\Policies\Posts;
 
 use App\Domain\Auth\Enums\PermissionType;
-use App\Domain\Support\BasePolicy;
+use App\Policies\BasePolicy;
 use App\Domain\Support\Interfaces\AuthInterface;
 use App\Domain\Posts\Models\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;

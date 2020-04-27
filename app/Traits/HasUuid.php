@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Domain\Support\Traits;
+namespace App\Traits;
 
 
 use Illuminate\Database\Eloquent\Model;

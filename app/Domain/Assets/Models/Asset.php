@@ -5,7 +5,7 @@ namespace App\Domain\Assets\Models;
 
 use App\Builders\Assets\AssetBuilder;
 use App\Domain\Posts\Models\Post;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 

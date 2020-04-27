@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use App\Domain\Auth\Models\Role;
 use App\Domain\Auth\Requests\SyncPermissionRequest;
 use App\Domain\Auth\Transformers\PermissionTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class PermissionRoleController extends ApiController

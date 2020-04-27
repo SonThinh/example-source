@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Domain\Auth\Models\Admin;
 use App\Domain\Auth\Requests\AssignRoleRequest;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Arr;
 
 class AdminRoleController extends ApiController

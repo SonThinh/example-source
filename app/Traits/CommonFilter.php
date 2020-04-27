@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Domain\Support\Traits;
+namespace App\Traits;
 
 
-use App\Domain\Support\Builder;
+use App\Builders\Builder;
 
 trait CommonFilter
 {
@@ -12,7 +12,7 @@ trait CommonFilter
      * Filter model by created datetime
      *
      * @param  string|array  $created_at
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      * @throws \Exception
      */
     public function created_at($created_at)
@@ -32,7 +32,7 @@ trait CommonFilter
      * Filter model by updated datetime
      *
      * @param  string|array  $updated_at
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      * @throws \Exception
      */
     public function updated_at($updated_at)
@@ -52,7 +52,7 @@ trait CommonFilter
      * Filter model by deleted datetime
      *
      * @param  string|array  $deleted_at
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      * @throws \Exception
      */
     public function deleted_at($deleted_at)

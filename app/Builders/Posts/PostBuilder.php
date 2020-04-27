@@ -4,7 +4,7 @@
 namespace App\Builders\Posts;
 
 
-use App\Domain\Support\Builder;
+use App\Builders\Builder;
 
 class PostBuilder extends Builder
 {

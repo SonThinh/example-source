@@ -4,7 +4,7 @@
 namespace App\Builders\Assets;
 
 
-use App\Domain\Support\Builder;
+use App\Builders\Builder;
 
 class AssetBuilder extends Builder
 {

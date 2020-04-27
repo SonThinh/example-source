@@ -12,7 +12,7 @@ class ContactFilter extends Filter
      * Filter contact by website
      *
      * @param string $website
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function website($website)
     {
@@ -24,7 +24,7 @@ class ContactFilter extends Filter
      * Filter contact by email
      *
      * @param string $address
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function address($address)
     {
@@ -35,7 +35,7 @@ class ContactFilter extends Filter
      * Filter contact by email
      *
      * @param string $email
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function email($email)
     {
@@ -46,7 +46,7 @@ class ContactFilter extends Filter
      * Filter contact by fax
      *
      * @param string $fax
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function fax($fax)
     {
@@ -57,7 +57,7 @@ class ContactFilter extends Filter
      * Filter contact by tel
      *
      * @param string $tel
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function tel($tel)
     {
@@ -68,7 +68,7 @@ class ContactFilter extends Filter
      * Filter contact by free_dial
      *
      * @param string $free_dial
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function freeDial($free_dial)
     {
@@ -79,7 +79,7 @@ class ContactFilter extends Filter
      * Filter contact by city
      *
      * @param string $city
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function city($city)
     {
@@ -90,7 +90,7 @@ class ContactFilter extends Filter
      * Filter contact by postcode
      *
      * @param string $postcode
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function postcode($postcode)
     {

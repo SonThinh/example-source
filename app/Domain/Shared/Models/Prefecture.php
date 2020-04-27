@@ -4,7 +4,7 @@
 namespace App\Domain\Shared\Models;
 
 
-use App\Domain\Support\Traits\HasUuid;
+use App\Traits\HasUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 

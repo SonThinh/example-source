@@ -5,7 +5,7 @@ namespace App\Domain\Auth\Sorts;
 
 
 use App\Domain\Support\Sorts\Sort;
-use App\Domain\Support\Traits\CommonSort;
+use App\Traits\CommonSort;
 
 class PermissionSort extends Sort
 {

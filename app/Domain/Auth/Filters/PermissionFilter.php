@@ -12,7 +12,7 @@ class PermissionFilter extends Filter
      * Filter user by name
      *
      * @param  string  $name
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function name($name)
     {

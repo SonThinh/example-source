@@ -4,7 +4,7 @@
 namespace App\Domain\Posts\Filters;
 
 use App\Domain\Support\Filters\Filter;
-use App\Domain\Support\Traits\CommonFilter;
+use App\Traits\CommonFilter;
 
 class PostFilter extends Filter
 {
@@ -14,7 +14,7 @@ class PostFilter extends Filter
      * Filter post's by post type
      *
      * @param  string  $type
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function postType(string $type)
     {
@@ -25,7 +25,7 @@ class PostFilter extends Filter
      * Filter post's by title
      *
      * @param  string  $title
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function title(string $title)
     {
@@ -36,7 +36,7 @@ class PostFilter extends Filter
      * Filter post's by status
      *
      * @param  string  $status
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      */
     public function status(string $status)
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domain\Support\Traits;
+namespace App\Traits;
 
-use App\Domain\Support\Builder;
+use App\Builders\Builder;
 
 trait CommonSort
 {
@@ -10,7 +10,7 @@ trait CommonSort
      * Sort model by created datetime
      *
      * @param  string  $direction
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      * @throws \Exception
      */
     public function created_at($direction)
@@ -27,7 +27,7 @@ trait CommonSort
      * Sort model by updated datetime
      *
      * @param  string  $direction
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      * @throws \Exception
      */
     public function updated_at($direction)
@@ -44,7 +44,7 @@ trait CommonSort
      * Sort model by deleted datetime
      *
      * @param  string  $direction
-     * @return \App\Domain\Support\Builder
+     * @return \App\Builders\Builder
      * @throws \Exception
      */
     public function deleted_at($direction)

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Domain\Shared\Traits;
+namespace App\Traits;
 
 use App\Domain\Shared\Models\Contact;
 use Illuminate\Database\Eloquent\Model;

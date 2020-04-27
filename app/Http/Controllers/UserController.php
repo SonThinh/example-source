@@ -12,7 +12,7 @@ use App\Domain\Auth\Requests\CreateUserRequest;
 use App\Domain\Auth\Requests\UpdateUserRequest;
 use App\Domain\Auth\Sorts\UserSort;
 use App\Domain\Auth\Transformers\UserTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class UserController extends ApiController

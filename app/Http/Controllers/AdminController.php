@@ -10,7 +10,7 @@ use App\Domain\Auth\Requests\CreateAdminRequest;
 use App\Domain\Auth\Requests\UpdateAdminRequest;
 use App\Domain\Auth\Sorts\AdminSort;
 use App\Domain\Auth\Transformers\AdminTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class AdminController extends ApiController

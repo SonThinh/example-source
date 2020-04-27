@@ -3,7 +3,7 @@
 
 namespace App\Builders\Companies;
 
-use App\Domain\Support\Builder;
+use App\Builders\Builder;
 
 class CompanyBuilder extends Builder
 {

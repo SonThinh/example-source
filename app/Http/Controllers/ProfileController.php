@@ -9,7 +9,7 @@ use App\Domain\Auth\Models\Admin;
 use App\Domain\Auth\Models\User;
 use App\Domain\Auth\Transformers\AdminTransformer;
 use App\Domain\Auth\Transformers\UserTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Flugg\Responder\Exceptions\Http\UnauthenticatedException;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Exceptions\UserNotDefinedException;

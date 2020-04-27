@@ -4,7 +4,7 @@
 namespace App\Domain\Support\Filters;
 
 
-use App\Domain\Support\Builder;
+use App\Builders\Builder;
 use Illuminate\Http\Request;
 
 abstract class Filter

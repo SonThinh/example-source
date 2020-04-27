@@ -5,7 +5,7 @@ namespace App\Domain\Shared\Sorts;
 
 
 use App\Domain\Support\Sorts\Sort;
-use App\Domain\Support\Traits\CommonSort;
+use App\Traits\CommonSort;
 
 class ContactSort extends Sort
 {

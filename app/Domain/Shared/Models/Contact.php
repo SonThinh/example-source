@@ -4,7 +4,7 @@
 namespace App\Domain\Shared\Models;
 
 use App\Builders\Shared\ContactBuilder;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model

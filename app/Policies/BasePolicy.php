@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Domain\Support;
+namespace App\Policies;
 
 
 use App\Domain\Auth\Enums\UserType;

@@ -4,7 +4,7 @@
 namespace App\Domain\Posts\Sorts;
 
 use App\Domain\Support\Sorts\Sort;
-use App\Domain\Support\Traits\CommonSort;
+use App\Traits\CommonSort;
 
 class PostSort extends Sort
 {

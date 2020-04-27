@@ -12,7 +12,7 @@ use App\Domain\Auth\Requests\CreateRoleRequest;
 use App\Domain\Auth\Requests\UpdateRoleRequest;
 use App\Domain\Auth\Sorts\RoleSort;
 use App\Domain\Auth\Transformers\RoleTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class RoleController extends ApiController

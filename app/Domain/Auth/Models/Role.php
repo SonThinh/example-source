@@ -3,7 +3,7 @@
 namespace App\Domain\Auth\Models;
 
 use App\Builders\Auth\RoleBuilder;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Traits\OverridesBuilder;
 use Spatie\Permission\Models\Role as BaseRole;
 
 class Role extends BaseRole

@@ -4,7 +4,7 @@
 namespace App\Builders\Shared;
 
 
-use App\Domain\Support\Builder;
+use App\Builders\Builder;
 
 class ContactBuilder extends Builder
 {

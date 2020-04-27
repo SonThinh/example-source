@@ -8,7 +8,7 @@ use App\Actions\Auth\UploadFileAction;
 use App\Domain\Assets\Models\Asset;
 use App\Domain\Assets\Requests\UploadAssetRequest;
 use App\Domain\Assets\Transformers\AssetTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 

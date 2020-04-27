@@ -11,7 +11,7 @@ use App\Domain\Companies\Requests\CreateCompanyRequest;
 use App\Domain\Companies\Requests\UpdateCompanyRequest;
 use App\Domain\Companies\Sorts\CompanySort;
 use App\Domain\Companies\Transformers\CompanyTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class CompanyController extends ApiController

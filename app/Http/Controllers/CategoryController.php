@@ -9,7 +9,7 @@ use App\Domain\Shared\Requests\CreateCategoryRequest;
 use App\Domain\Shared\Requests\UpdateCategoryRequest;
 use App\Domain\Shared\Sorts\CategorySort;
 use App\Domain\Shared\Transformers\CategoryTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class CategoryController extends ApiController

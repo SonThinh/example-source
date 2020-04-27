@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Domain\Support;
+namespace App\Http\Controllers;
 
-use App\Domain\Support\Traits\HasTransformer;
+use App\Traits\HasTransformer;
 use App\Http\Controllers\Controller as BaseController;
 
 class ApiController extends BaseController

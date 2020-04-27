@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Domain\Support;
+namespace App\Builders;
 
 use App\Domain\Support\Filters\EloquentFilter;
 use App\Domain\Support\Filters\Filter;

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Domain\Shared\Models\Prefecture;
 use App\Domain\Shared\Transformers\PrefectureTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class PrefectureController extends ApiController

@@ -3,7 +3,7 @@
 namespace App\Domain\Auth\Models;
 
 use App\Builders\Auth\PermissionBuilder;
-use App\Domain\Support\Traits\OverridesBuilder;
+use App\Traits\OverridesBuilder;
 use Spatie\Permission\Models\Permission as BasePermission;
 
 class Permission extends BasePermission

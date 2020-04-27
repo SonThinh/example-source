@@ -12,7 +12,7 @@ use App\Domain\Posts\Sorts\PostSort;
 use App\Domain\Posts\Requests\CreatePostRequest;
 use App\Domain\Posts\Requests\UpdatePostRequest;
 use App\Domain\Posts\Transformers\PostTransformer;
-use App\Domain\Support\ApiController;
+use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class PostController extends ApiController

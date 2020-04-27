@@ -3,7 +3,7 @@
 
 namespace App\Domain\Support\Sorts;
 
-use App\Domain\Support\Builder;
+use App\Builders\Builder;
 use Illuminate\Http\Request;
 
 abstract class Sort
