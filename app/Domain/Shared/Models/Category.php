@@ -3,7 +3,7 @@
 
 namespace App\Domain\Shared\Models;
 
-use App\Domain\Shared\Builders\CategoryBuilder;
+use App\Builders\Shared\CategoryBuilder;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 

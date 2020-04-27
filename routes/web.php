@@ -1,6 +1,6 @@
 <?php
 
-use App\Domain\Assets\Controllers\AssetController;
+use App\Http\Controllers\AssetController;
 use Illuminate\Support\Facades\Route;
 
 /*

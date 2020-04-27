@@ -3,7 +3,7 @@
 
 namespace App\Domain\Companies\Models;
 
-use App\Domain\Companies\Builders\CompanyBuilder;
+use App\Builders\Companies\CompanyBuilder;
 use App\Domain\Shared\Traits\HasContact;
 use App\Domain\Support\Traits\HasUuid;
 use App\Domain\Support\Traits\OverridesBuilder;

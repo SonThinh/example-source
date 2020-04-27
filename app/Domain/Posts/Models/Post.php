@@ -4,7 +4,7 @@ namespace App\Domain\Posts\Models;
 
 
 use App\Domain\Assets\Models\Asset;
-use App\Domain\Posts\Builders\PostBuilder;
+use App\Builders\Posts\PostBuilder;
 use App\Domain\Support\Traits\HasUuid;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;

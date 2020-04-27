@@ -3,7 +3,7 @@
 
 namespace App\Domain\Shared\Models;
 
-use App\Domain\Shared\Builders\ContactBuilder;
+use App\Builders\Shared\ContactBuilder;
 use App\Domain\Support\Traits\OverridesBuilder;
 use Illuminate\Database\Eloquent\Model;
 

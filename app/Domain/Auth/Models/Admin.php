@@ -2,7 +2,7 @@
 
 namespace App\Domain\Auth\Models;
 
-use App\Domain\Auth\Builders\AdminBuilder;
+use App\Builders\Auth\AdminBuilder;
 use App\Domain\Support\Interfaces\AuthInterface;
 use App\Domain\Support\Traits\HasUuid;
 use App\Domain\Support\Traits\OverridesBuilder;

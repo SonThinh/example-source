@@ -2,7 +2,7 @@
 
 namespace App\Domain\Auth\Models;
 
-use App\Domain\Auth\Builders\UserBuilder;
+use App\Builders\Auth\UserBuilder;
 use App\Domain\Shared\Traits\HasContact;
 use App\Domain\Support\Interfaces\AuthInterface;
 use App\Domain\Support\Traits\HasUuid;
