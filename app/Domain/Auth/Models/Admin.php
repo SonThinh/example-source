@@ -3,7 +3,7 @@
 namespace App\Domain\Auth\Models;
 
 use App\Builders\Auth\AdminBuilder;
-use App\Domain\Support\Interfaces\AuthInterface;
+use App\Interfaces\AuthInterface;
 use App\Traits\HasUuid;
 use App\Traits\OverridesBuilder;
 use Illuminate\Foundation\Auth\User as Authenticatable;

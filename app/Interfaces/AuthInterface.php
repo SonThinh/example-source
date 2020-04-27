@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Domain\Support\Interfaces;
+namespace App\Interfaces;
 
 
 interface AuthInterface

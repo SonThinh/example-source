@@ -7,7 +7,7 @@ namespace App\Policies\Shared;
 use App\Domain\Auth\Enums\PermissionType;
 use App\Domain\Shared\Models\Category;
 use App\Policies\BasePolicy;
-use App\Domain\Support\Interfaces\AuthInterface;
+use App\Interfaces\AuthInterface;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CategoryPolicy extends BasePolicy

@@ -7,7 +7,7 @@ namespace App\Policies\Auth;
 use App\Domain\Auth\Enums\PermissionType;
 use App\Domain\Auth\Models\Admin;
 use App\Policies\BasePolicy;
-use App\Domain\Support\Interfaces\AuthInterface;
+use App\Interfaces\AuthInterface;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class AdminPolicy extends BasePolicy

@@ -5,7 +5,7 @@ namespace App\Policies\Posts;
 
 use App\Domain\Auth\Enums\PermissionType;
 use App\Policies\BasePolicy;
-use App\Domain\Support\Interfaces\AuthInterface;
+use App\Interfaces\AuthInterface;
 use App\Domain\Posts\Models\Post;
 use Illuminate\Auth\Access\HandlesAuthorization;
 

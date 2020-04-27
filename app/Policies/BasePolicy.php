@@ -5,7 +5,7 @@ namespace App\Policies;
 
 
 use App\Domain\Auth\Enums\UserType;
-use App\Domain\Support\Interfaces\AuthInterface;
+use App\Interfaces\AuthInterface;
 
 class BasePolicy
 {
