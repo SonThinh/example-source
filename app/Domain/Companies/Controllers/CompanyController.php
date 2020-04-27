@@ -5,12 +5,12 @@ namespace App\Domain\Companies\Controllers;
 
 use App\Domain\Companies\Action\CreateCompanyAction;
 use App\Domain\Companies\Action\UpdateCompanyAction;
-use App\Domain\Companies\Filters\CompanyFilter;
-use App\Domain\Companies\Models\Company;
-use App\Domain\Companies\Requests\CreateCompanyRequest;
-use App\Domain\Companies\Requests\UpdateCompanyRequest;
-use App\Domain\Companies\Sorts\CompanySort;
-use App\Domain\Companies\Transformers\CompanyTransformer;
+use App\Filters\Companies\CompanyFilter;
+use App\Models\Company;
+use App\Requests\Companies\CreateCompanyRequest;
+use App\Requests\Companies\UpdateCompanyRequest;
+use App\Sorts\Companies\CompanySort;
+use App\Transformers\Companies\CompanyTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

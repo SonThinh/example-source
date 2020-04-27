@@ -4,11 +4,11 @@
 
 namespace App\Domain\Auth\Controllers;
 
-use App\Domain\Auth\Enums\GuardType;
-use App\Domain\Auth\Models\Admin;
-use App\Domain\Auth\Models\User;
-use App\Domain\Auth\Transformers\AdminTransformer;
-use App\Domain\Auth\Transformers\UserTransformer;
+use App\Enums\Auth\GuardType;
+use App\Models\Admin;
+use App\Models\User;
+use App\Transformers\Auth\AdminTransformer;
+use App\Transformers\Auth\UserTransformer;
 use App\Domain\Support\ApiController;
 use Flugg\Responder\Exceptions\Http\UnauthenticatedException;
 use Illuminate\Http\Request;

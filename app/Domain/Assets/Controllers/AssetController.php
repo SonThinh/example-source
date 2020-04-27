@@ -5,9 +5,9 @@ namespace App\Domain\Assets\Controllers;
 
 
 use App\Domain\Assets\Actions\UploadFileAction;
-use App\Domain\Assets\Models\Asset;
-use App\Domain\Assets\Requests\UploadAssetRequest;
-use App\Domain\Assets\Transformers\AssetTransformer;
+use App\Models\Asset;
+use App\Requests\Assets\UploadAssetRequest;
+use App\Transformers\Assets\AssetTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;

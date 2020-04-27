@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Domain\Auth\Models\User;
-use App\Domain\Companies\Models\Company;
+use App\Models\User;
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 

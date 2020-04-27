@@ -1,6 +1,6 @@
 <?php
 
-use App\Domain\Shared\Models\Prefecture;
+use App\Models\Prefecture;
 use Illuminate\Database\Seeder;
 
 class PrefectureSeeder extends Seeder

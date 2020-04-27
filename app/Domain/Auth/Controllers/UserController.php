@@ -6,12 +6,12 @@ namespace App\Domain\Auth\Controllers;
 
 use App\Domain\Auth\Actions\CreateUserAction;
 use App\Domain\Auth\Actions\UpdateUserAction;
-use App\Domain\Auth\Filters\UserFilter;
-use App\Domain\Auth\Models\User;
-use App\Domain\Auth\Requests\CreateUserRequest;
-use App\Domain\Auth\Requests\UpdateUserRequest;
-use App\Domain\Auth\Sorts\UserSort;
-use App\Domain\Auth\Transformers\UserTransformer;
+use App\Filters\Auth\UserFilter;
+use App\Models\User;
+use App\Requests\Auth\CreateUserRequest;
+use App\Requests\Auth\UpdateUserRequest;
+use App\Sorts\Auth\UserSort;
+use App\Transformers\Auth\UserTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

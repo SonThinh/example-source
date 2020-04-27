@@ -1,7 +1,7 @@
 <?php
 
-use App\Domain\Companies\Models\Company;
-use App\Domain\Shared\Models\Contact;
+use App\Models\Company;
+use App\Models\Contact;
 use Illuminate\Database\Seeder;
 
 class CompanySeeder extends Seeder

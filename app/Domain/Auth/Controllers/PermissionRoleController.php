@@ -4,9 +4,9 @@
 
 namespace App\Domain\Auth\Controllers;
 
-use App\Domain\Auth\Models\Role;
-use App\Domain\Auth\Requests\SyncPermissionRequest;
-use App\Domain\Auth\Transformers\PermissionTransformer;
+use App\Models\Role;
+use App\Requests\Auth\SyncPermissionRequest;
+use App\Transformers\Auth\PermissionTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

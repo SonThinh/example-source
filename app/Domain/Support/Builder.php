@@ -3,10 +3,10 @@
 
 namespace App\Domain\Support;
 
-use App\Domain\Support\Filters\EloquentFilter;
-use App\Domain\Support\Filters\Filter;
+use App\Filters\EloquentFilter;
+use App\Filters\Filter;
 use App\Domain\Support\Sorts\OrderBy;
-use App\Domain\Support\Sorts\Sort;
+use App\Sorts\Sort;
 use Closure;
 use Illuminate\Database\Eloquent\Builder as BaseBuilder;
 use Illuminate\Database\Query\Builder as QueryBuilder;

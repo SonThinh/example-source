@@ -4,7 +4,7 @@
 namespace App\Domain\Posts\Actions;
 
 
-use App\Domain\Posts\Models\Post;
+use App\Models\Post;
 use Illuminate\Support\Arr;
 
 class CreatePostAction

@@ -4,7 +4,7 @@
 namespace App\Domain\Support;
 
 
-use App\Domain\Auth\Enums\UserType;
+use App\Enums\Auth\UserType;
 use App\Domain\Support\Interfaces\AuthInterface;
 
 class BasePolicy

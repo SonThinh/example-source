@@ -4,8 +4,8 @@
 
 namespace App\Domain\Auth\Controllers;
 
-use App\Domain\Auth\Models\Admin;
-use App\Domain\Auth\Requests\AssignRoleRequest;
+use App\Models\Admin;
+use App\Requests\Auth\AssignRoleRequest;
 use App\Domain\Support\ApiController;
 use Illuminate\Support\Arr;
 

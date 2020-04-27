@@ -1,6 +1,6 @@
 <?php
 
-use App\Domain\Auth\Models\Admin;
+use App\Models\Admin;
 use Illuminate\Database\Seeder;
 
 class AdminSeeder extends Seeder

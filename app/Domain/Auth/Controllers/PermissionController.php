@@ -4,10 +4,10 @@
 
 namespace App\Domain\Auth\Controllers;
 
-use App\Domain\Auth\Filters\PermissionFilter;
-use App\Domain\Auth\Models\Permission;
-use App\Domain\Auth\Sorts\PermissionSort;
-use App\Domain\Auth\Transformers\PermissionTransformer;
+use App\Filters\Auth\PermissionFilter;
+use App\Models\Permission;
+use App\Sorts\Auth\PermissionSort;
+use App\Transformers\Auth\PermissionTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

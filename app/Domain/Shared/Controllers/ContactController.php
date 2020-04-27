@@ -3,10 +3,10 @@
 
 namespace App\Domain\Shared\Controllers;
 
-use App\Domain\Shared\Filters\ContactFilter;
-use App\Domain\Shared\Models\Contact;
-use App\Domain\Shared\Sorts\ContactSort;
-use App\Domain\Shared\Transformers\ContactTransformer;
+use App\Filters\Shared\ContactFilter;
+use App\Models\Contact;
+use App\Sorts\Shared\ContactSort;
+use App\Transformers\Shared\ContactTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

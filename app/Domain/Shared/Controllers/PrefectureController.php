@@ -3,8 +3,8 @@
 
 namespace App\Domain\Shared\Controllers;
 
-use App\Domain\Shared\Models\Prefecture;
-use App\Domain\Shared\Transformers\PrefectureTransformer;
+use App\Models\Prefecture;
+use App\Transformers\Shared\PrefectureTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

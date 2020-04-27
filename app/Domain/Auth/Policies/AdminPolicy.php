@@ -4,8 +4,8 @@
 namespace App\Domain\Auth\Policies;
 
 
-use App\Domain\Auth\Enums\PermissionType;
-use App\Domain\Auth\Models\Admin;
+use App\Enums\Auth\PermissionType;
+use App\Models\Admin;
 use App\Domain\Support\BasePolicy;
 use App\Domain\Support\Interfaces\AuthInterface;
 use Illuminate\Auth\Access\HandlesAuthorization;

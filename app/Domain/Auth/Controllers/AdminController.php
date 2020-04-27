@@ -4,12 +4,12 @@
 
 namespace App\Domain\Auth\Controllers;
 
-use App\Domain\Auth\Filters\AdminFilter;
-use App\Domain\Auth\Models\Admin;
-use App\Domain\Auth\Requests\CreateAdminRequest;
-use App\Domain\Auth\Requests\UpdateAdminRequest;
-use App\Domain\Auth\Sorts\AdminSort;
-use App\Domain\Auth\Transformers\AdminTransformer;
+use App\Filters\Auth\AdminFilter;
+use App\Models\Admin;
+use App\Requests\Auth\CreateAdminRequest;
+use App\Requests\Auth\UpdateAdminRequest;
+use App\Sorts\Auth\AdminSort;
+use App\Transformers\Auth\AdminTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

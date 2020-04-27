@@ -4,7 +4,7 @@
 namespace App\Domain\Assets\Actions;
 
 use App\Domain\Assets\Exceptions\ErrorUploadException;
-use App\Domain\Assets\Models\Asset;
+use App\Models\Asset;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 

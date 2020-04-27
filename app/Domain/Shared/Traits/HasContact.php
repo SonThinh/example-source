@@ -3,7 +3,7 @@
 
 namespace App\Domain\Shared\Traits;
 
-use App\Domain\Shared\Models\Contact;
+use App\Models\Contact;
 use Illuminate\Database\Eloquent\Model;
 
 trait HasContact

@@ -4,7 +4,7 @@
 namespace App\Domain\Auth\Actions;
 
 
-use App\Domain\Auth\Models\Role;
+use App\Models\Role;
 use Illuminate\Support\Arr;
 
 class UpdateRoleAction

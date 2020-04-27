@@ -3,12 +3,12 @@
 
 namespace App\Domain\Shared\Controllers;
 
-use App\Domain\Shared\Filters\CategoryFilter;
-use App\Domain\Shared\Models\Category;
-use App\Domain\Shared\Requests\CreateCategoryRequest;
-use App\Domain\Shared\Requests\UpdateCategoryRequest;
-use App\Domain\Shared\Sorts\CategorySort;
-use App\Domain\Shared\Transformers\CategoryTransformer;
+use App\Filters\Shared\CategoryFilter;
+use App\Models\Category;
+use App\Requests\Shared\CreateCategoryRequest;
+use App\Requests\Shared\UpdateCategoryRequest;
+use App\Sorts\Shared\CategorySort;
+use App\Transformers\Shared\CategoryTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

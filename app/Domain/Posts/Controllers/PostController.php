@@ -6,12 +6,12 @@ namespace App\Domain\Posts\Controllers;
 
 use App\Domain\Posts\Actions\CreatePostAction;
 use App\Domain\Posts\Actions\UpdatePostAction;
-use App\Domain\Posts\Filters\PostFilter;
-use App\Domain\Posts\Models\Post;
-use App\Domain\Posts\Sorts\PostSort;
-use App\Domain\Posts\Requests\CreatePostRequest;
-use App\Domain\Posts\Requests\UpdatePostRequest;
-use App\Domain\Posts\Transformers\PostTransformer;
+use App\Filters\Posts\PostFilter;
+use App\Models\Post;
+use App\Sorts\Posts\PostSort;
+use App\Requests\Posts\CreatePostRequest;
+use App\Requests\Posts\UpdatePostRequest;
+use App\Transformers\Posts\PostTransformer;
 use App\Domain\Support\ApiController;
 use Illuminate\Http\Request;
 

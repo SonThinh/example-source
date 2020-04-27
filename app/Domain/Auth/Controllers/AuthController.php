@@ -5,7 +5,7 @@ namespace App\Domain\Auth\Controllers;
 
 use App\Domain\Auth\Actions\LoginAction;
 use App\Domain\Auth\Actions\RefreshTokenAction;
-use App\Domain\Auth\Enums\GuardType;
+use App\Enums\Auth\GuardType;
 use App\Domain\Support\ApiController;
 use Flugg\Responder\Exceptions\Http\PageNotFoundException;
 use Flugg\Responder\Serializers\NoopSerializer;
