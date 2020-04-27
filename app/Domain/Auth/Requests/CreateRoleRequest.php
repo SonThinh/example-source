@@ -19,7 +19,7 @@ class CreateRoleRequest extends ApiRequest
             'display_name' => 'nullable|string',
             'description' => 'nullable|string',
             'permissions' => 'filled|array',
-            'permissions.*' => 'filled|exists:permissions,name',
+            'permissions.*' => 'filled|exists:permissions,id',
         ];
     }
 
