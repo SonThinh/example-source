@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Actions\Auth;
+namespace App\Actions\Assets;
 
 use App\Models\Asset;
 use App\Exceptions\Assets\ErrorUploadException;

@@ -7,7 +7,7 @@ namespace App\Http\Controllers;
 use App\Models\Asset;
 use App\Requests\Assets\UploadAssetRequest;
 use App\Transformers\Assets\AssetTransformer;
-use App\Actions\Auth\UploadFileAction;
+use App\Actions\Assets\UploadFileAction;
 use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
