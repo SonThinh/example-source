@@ -2,18 +2,18 @@
 
 namespace App\Providers;
 
-use App\Domain\Auth\Models\Admin;
-use App\Domain\Auth\Models\Role;
-use App\Domain\Auth\Models\User;
-use App\Domain\Auth\Policies\AdminPolicy;
-use App\Domain\Auth\Policies\RolePolicy;
-use App\Domain\Auth\Policies\UserPolicy;
-use App\Domain\Companies\Models\Company;
-use App\Domain\Companies\Policies\CompanyPolicy;
-use App\Domain\Posts\Models\Post;
-use App\Domain\Posts\Policies\PostPolicy;
-use App\Domain\Shared\Models\Category;
-use App\Domain\Shared\Policies\CategoryPolicy;
+use App\Models\Admin;
+use App\Models\Role;
+use App\Models\User;
+use App\Models\Company;
+use App\Models\Post;
+use App\Models\Category;
+use App\Policies\Auth\AdminPolicy;
+use App\Policies\Auth\RolePolicy;
+use App\Policies\Auth\UserPolicy;
+use App\Policies\Companies\CompanyPolicy;
+use App\Policies\Posts\PostPolicy;
+use App\Policies\Shared\CategoryPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 

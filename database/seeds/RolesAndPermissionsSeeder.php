@@ -1,10 +1,10 @@
 <?php
 
-use App\Domain\Auth\Enums\PermissionType;
-use App\Domain\Auth\Enums\UserType;
-use App\Domain\Auth\Models\Permission;
-use App\Domain\Auth\Models\Role;
-use App\Domain\Auth\Models\Admin;
+use App\Enums\Auth\PermissionType;
+use App\Enums\Auth\UserType;
+use App\Models\Permission;
+use App\Models\Role;
+use App\Models\Admin;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Spatie\Permission\PermissionRegistrar;

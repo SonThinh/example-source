@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Domain\Auth\Models\Admin;
-use App\Domain\Auth\Models\Role;
+use App\Models\Admin;
+use App\Models\Role;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 

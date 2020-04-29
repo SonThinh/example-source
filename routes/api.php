@@ -1,19 +1,19 @@
 <?php
 
-use App\Domain\Assets\Controllers\AssetController;
-use App\Domain\Auth\Controllers\AdminController;
-use App\Domain\Auth\Controllers\AdminRoleController;
-use App\Domain\Auth\Controllers\AuthController;
-use App\Domain\Auth\Controllers\PermissionController;
-use App\Domain\Auth\Controllers\PermissionRoleController;
-use App\Domain\Auth\Controllers\ProfileController;
-use App\Domain\Auth\Controllers\RoleController;
-use App\Domain\Auth\Controllers\UserController;
-use App\Domain\Companies\Controllers\CompanyController;
-use App\Domain\Posts\Controllers\PostController;
-use App\Domain\Shared\Controllers\CategoryController;
-use App\Domain\Shared\Controllers\ContactController;
-use App\Domain\Shared\Controllers\PrefectureController;
+use App\Http\Controllers\AssetController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminRoleController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\PermissionRoleController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PrefectureController;
 
 /*
 |--------------------------------------------------------------------------
