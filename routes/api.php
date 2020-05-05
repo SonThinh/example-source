@@ -14,7 +14,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PrefectureController;
-
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -36,6 +36,7 @@ Route::prefix('auth')->group(function () {
 
 Route::middleware('auth:admin,user')->group(function () {
     Route::apiResource('categories', CategoryController::class);
+    Route::get('dashboards', [DashboardController::class, 'index']);
     Route::apiResource('prefectures', PrefectureController::class)->only('index');
     Route::apiResource('users', UserController::class);
     Route::apiResource('admins', AdminController::class);
