@@ -1,9 +1,6 @@
 <?php
+namespace App\Filters;
 
-
-namespace App\Filters\Posts;
-
-use App\Filters\Filter;
 use App\Traits\CommonFilter;
 
 class PostFilter extends Filter

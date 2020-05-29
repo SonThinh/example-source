@@ -3,7 +3,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Filters\Companies\CompanyFilter;
+use App\Filters\CompanyFilter;
 use App\Models\Company;
 use App\Requests\Companies\CreateCompanyRequest;
 use App\Requests\Companies\UpdateCompanyRequest;
@@ -11,7 +11,6 @@ use App\Sorts\Companies\CompanySort;
 use App\Transformers\Companies\CompanyTransformer;
 use App\Actions\Companies\CreateCompanyAction;
 use App\Actions\Companies\UpdateCompanyAction;
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class CompanyController extends ApiController

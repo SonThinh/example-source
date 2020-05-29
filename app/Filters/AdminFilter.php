@@ -1,18 +1,14 @@
 <?php
-/** @noinspection PhpFullyQualifiedNameUsageInspection */
+namespace App\Filters;
 
-
-namespace App\Filters\Auth;
-
-use App\Filters\Filter;
 use App\Traits\CommonFilter;
 
-class UserFilter extends Filter
+class AdminFilter extends Filter
 {
     use CommonFilter;
 
     /**
-     * Filter user by name
+     * Filter admin by name
      *
      * @param  string  $name
      * @return \App\Builders\Builder
@@ -23,13 +19,13 @@ class UserFilter extends Filter
     }
 
     /**
-     * Filter user by email
+     * Filter admin by username
      *
-     * @param  string  $email
+     * @param  string  $username
      * @return \App\Builders\Builder
      */
-    public function email($email)
+    public function username($username)
     {
-        return $this->query->whereLike('email', $email);
+        return $this->query->whereLike('username', $username);
     }
 }

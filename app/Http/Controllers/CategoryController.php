@@ -3,13 +3,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Filters\Shared\CategoryFilter;
+use App\Filters\CategoryFilter;
 use App\Models\Category;
 use App\Requests\Shared\CreateCategoryRequest;
 use App\Requests\Shared\UpdateCategoryRequest;
 use App\Sorts\Shared\CategorySort;
 use App\Transformers\Shared\CategoryTransformer;
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class CategoryController extends ApiController

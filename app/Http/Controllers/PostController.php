@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 
 
-use App\Filters\Posts\PostFilter;
+use App\Filters\PostFilter;
 use App\Models\Post;
 use App\Sorts\Posts\PostSort;
 use App\Requests\Posts\CreatePostRequest;
@@ -13,7 +13,6 @@ use App\Requests\Posts\UpdatePostRequest;
 use App\Transformers\Posts\PostTransformer;
 use App\Actions\Posts\CreatePostAction;
 use App\Actions\Posts\UpdatePostAction;
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class PostController extends ApiController

@@ -4,13 +4,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Filters\Auth\AdminFilter;
+use App\Filters\AdminFilter;
 use App\Models\Admin;
 use App\Requests\Auth\CreateAdminRequest;
 use App\Requests\Auth\UpdateAdminRequest;
 use App\Sorts\Auth\AdminSort;
 use App\Transformers\Auth\AdminTransformer;
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class AdminController extends ApiController

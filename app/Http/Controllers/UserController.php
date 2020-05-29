@@ -5,7 +5,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Filters\Auth\UserFilter;
+use App\Filters\UserFilter;
 use App\Models\User;
 use App\Requests\Auth\CreateUserRequest;
 use App\Requests\Auth\UpdateUserRequest;
@@ -13,7 +13,6 @@ use App\Sorts\Auth\UserSort;
 use App\Transformers\Auth\UserTransformer;
 use App\Actions\Auth\CreateUserAction;
 use App\Actions\Auth\UpdateUserAction;
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class UserController extends ApiController

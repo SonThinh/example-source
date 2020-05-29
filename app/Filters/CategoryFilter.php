@@ -1,9 +1,5 @@
 <?php
-
-
-namespace App\Filters\Shared;
-
-use App\Filters\Filter;
+namespace App\Filters;
 
 class CategoryFilter extends Filter
 {

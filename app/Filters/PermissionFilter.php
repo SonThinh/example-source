@@ -1,10 +1,6 @@
 <?php
 /** @noinspection PhpFullyQualifiedNameUsageInspection */
-
-
-namespace App\Filters\Auth;
-
-use App\Filters\Filter;
+namespace App\Filters;
 
 class PermissionFilter extends Filter
 {

@@ -3,11 +3,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Filters\Shared\ContactFilter;
+use App\Filters\ContactFilter;
 use App\Models\Contact;
 use App\Sorts\Shared\ContactSort;
 use App\Transformers\Shared\ContactTransformer;
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class ContactController extends ApiController

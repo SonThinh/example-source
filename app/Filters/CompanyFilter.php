@@ -1,10 +1,5 @@
 <?php
-
-
-namespace App\Filters\Companies;
-
-
-use App\Filters\Filter;
+namespace App\Filters;
 
 class CompanyFilter extends Filter
 {

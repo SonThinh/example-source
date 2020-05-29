@@ -4,11 +4,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Filters\Auth\PermissionFilter;
+use App\Filters\PermissionFilter;
 use App\Models\Permission;
 use App\Sorts\Auth\PermissionSort;
 use App\Transformers\Auth\PermissionTransformer;
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class PermissionController extends ApiController

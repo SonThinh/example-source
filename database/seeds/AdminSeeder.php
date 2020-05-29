@@ -12,9 +12,6 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        factory(Admin::class, 1)->create([
-            'username' => 'superadmin'
-        ]);
         factory(Admin::class, 50)->create();
     }
 }

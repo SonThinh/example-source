@@ -4,7 +4,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Filters\Auth\RoleFilter;
+use App\Filters\RoleFilter;
 use App\Models\Role;
 use App\Requests\Auth\CreateRoleRequest;
 use App\Requests\Auth\UpdateRoleRequest;
@@ -12,7 +12,6 @@ use App\Sorts\Auth\RoleSort;
 use App\Transformers\Auth\RoleTransformer;
 use App\Actions\Auth\CreateRoleAction;
 use App\Actions\Auth\UpdateRoleAction;
-use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 
 class RoleController extends ApiController
@@ -26,7 +25,7 @@ class RoleController extends ApiController
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @param \App\Filters\Auth\RoleFilter $roleFilter
+     * @param \App\Filters\RoleFilter $roleFilter
      * @param RoleSort $roleSort
      * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
      */
