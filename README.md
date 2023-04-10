@@ -25,14 +25,6 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/7.x/installation)
 
-Clone the repository
-
-    `git clone newphoria@newphoria.git.backlog.jp:/DEV_VIETNAM_LAB/laravel-cms.git`
-    
-Switch to the repo folder
-    
-    `cd laravel-cms`
-    
 Install all the dependencies using composer
     
     `composer install`
